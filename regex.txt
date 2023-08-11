@@ -1,0 +1,61 @@
+------------------------------------ patterns
+------------------ <.+?>
+- ? có nghĩa là match với số lần càng nhiều càng tốt
+- tức nó sẽ lấy bắt đầu từ < lấy toàn bộ giá trị match với .+ và end là > với số lần match nhiều nhất từ .+ đến >
+- get all tag
+
+
+------------------ replace with specific practical
+const replacePositionPractical = (n = 3) => {
+    let i = 0;
+    return 'a1b2d3c'.replace(/\d+/g, (match,p1) =>{
+          i++;
+        if(i == n) return '*';
+        else return match;
+    });
+}
+
+
+------------------ (?<=title=").+?(?=")
+- lấy các giá trị attribute của tag
+
+
+
+
+
+
+
+
+------------------------------------------------------  concepts
+------------------ (?<=d).+?>
+- match với d nhưng không lấy d và match với .+ end là > với số lần match nhiều nhất từ .+ đến >
+
+
+------------------ d(?=r)
+- match với d và theo +
+- sau d là r, nhưng r sẽ không nằm trong data được match
+
+
+------------------ (?<=r)d
+- match với d và trước d là r , tất nhiên r cũng hông nằm trong data được match
+
+
+------------------ d(?!r)
+- match với d và theo sau d là 1 ký tự không phải là r. 
+
+
+------------------ (?<!r)d
+- match với d và trước d là 1 ký tự không phải r.
+
+
+\d Khớp với 1 ký tự số(từ 0 đến 9)
+\w Khớp với bất kỳ ký 1 tự số hoặc chữ hoặc dấu gạch dưới _
+\s Khớp với ký tự khoảng trăng(bap gồm cả tab, xuống dòng)
+. Khớp với bất kỳ ký tự nào
+\d, \w, \s còn có phủ định của nó \D, \W, \S
+
+\D Khớp với 1 ký tự không phải là số
+\W Khớp với bất kỳ ký tự không phải là 1 số, chữ hoặc dấu gạch dưới '_'
+\S Khớp với ký tự không phải là khoảng trăng(bap gồm cả tab, xuống dòng)
+Bạn cũng có thể chọn riêng những ký tự không nhìn thấy như xuống dòng \n, tabs \t, carriage returns(ký tự đưa con trỏ về đầu dòng) \r
+
