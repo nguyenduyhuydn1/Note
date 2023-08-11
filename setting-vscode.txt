@@ -1,0 +1,8 @@
+---------------------------------------- change color active indent editor ----------------------------------------
+"workbench.colorCustomizations": {
+    "editorIndentGuide.activeBackground1": "#ff0000",
+}
+
+
+---------------------------------------- tree indent view dart ----------------------------------------
+ctrl + , va search "preview ui"
