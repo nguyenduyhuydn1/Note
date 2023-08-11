@@ -59,3 +59,7 @@ const replacePositionPractical = (n = 3) => {
 \S Khớp với ký tự không phải là khoảng trăng(bap gồm cả tab, xuống dòng)
 Bạn cũng có thể chọn riêng những ký tự không nhìn thấy như xuống dòng \n, tabs \t, carriage returns(ký tự đưa con trỏ về đầu dòng) \r
 
+
+
+https://viblo.asia/p/hoc-regex-co-ban-GrLZDvxV5k0
+
