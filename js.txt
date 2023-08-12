@@ -1,0 +1,8 @@
+------------------ how to listen to variable changes
+https://fedingo.com/how-to-listen-to-variable-changes-in-javascript/
+
+
+
+------------------ catch all event js
+monitorEvents(window, ["resize", "scroll"])
+https://developer.chrome.com/docs/devtools/console/utilities/#monitorEvents-function

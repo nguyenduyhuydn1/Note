@@ -1,3 +1,10 @@
+flutter_svg, nimate_do, dio, flutter_dotenv, flutter_riverpod, go_router, shimmer
+
+cached_network_image
+
+animated_bottom_navigation_bar, scroll_to_index
+
+
 ------------------ Flutter Custom Sliver App Bar - Basic to Advanced
 https://www.youtube.com/watch?v=s_3ak-4u43E&t=585s
 
@@ -9,4 +16,30 @@ https://www.youtube.com/watch?v=0QjQ0vhwCFI
 https://www.youtube.com/watch?v=mhxoXm8lWIo&t=68s
 https://www.youtube.com/watch?v=M9J-JJOuyE0&t=6s
 
------------------- 
+
+------------------ lutter_advanced_calendar, flutter_advanced_drawer 
+https://github.com/alex-melnyk?tab=repositories
+
+
+------------------ fix lỗi mỗi lần run app in emulator thì cache luôn tăng chứ éo giảm
+- sdk manager -> tools -> emulator -> uncheck launch in a tool window
+
+
+------------------ defaultTabController
+https://www.youtube.com/shorts/rAHtyVW8Jw4
+
+
+------------------ progress download
+https://www.youtube.com/watch?v=B7nSjENtocY
+
+
+------------------ Image vs ImageProvider
+https://stackoverflow.com/questions/59076399/what-is-the-difference-between-an-image-and-imageprovider-in-flutter
+
+
+------------------ SliverAppBar scroll tab
+https://stackoverflow.com/questions/63309188/how-to-remove-empty-space-in-sliverappbar
+
+
+------------------ custom theme data
+https://www.youtube.com/watch?v=Q9FosAdX2U4&t=1113s
