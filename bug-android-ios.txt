@@ -2,11 +2,9 @@
 physics: const BouncingScrollPhysics(),
 
 
-
 ------------------ lỗi tràn dữ liệu ở android studio
 1 - wipe data
 2 - setting -> tools -> Emulator -> uncheck launch in a tool window
-
 
 
 ------------------ sử lý lỗi về login bằng google
@@ -15,8 +13,6 @@ PlatformException(sign_in_failed, com.google.android.gms.common.api.ApiException
 
 https://www.dbestech.com/tutorials/platformexception-sign-in-failed-com-google-android-gms-common-api-apiexception-10-null-null
 https://www.dbestech.com/tutorials/generate-sha-1-for-flutter-react-native-android-native-app
-
-
 
 
 ------------------ 

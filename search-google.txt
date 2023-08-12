@@ -1,0 +1,41 @@
+------------------ search có chữ naruto
+"naruto"
+
+
+------------------ search title
+site:github.com naruto
+intitle:naruto
+
+
+------------------ search mô tả
+site:github.com +naruto
+
+
+------------------ search cả mô tả và title
+site:github.com +"naruto"
+
+
+------------------ OR, AND, (), ""
+naruto OR sasuke AND minato
+"(naruto OR sasuke) die"
+(gray OR red)(wolf OR fox)
+
+
+------------------ search inurl
+site:github.com inurl:naruto
+
+
+------------------ search file
+filetype:pdf naruto
+intitle:naruto filetype:pdf
+
+
+------------------ search naru nhung không chứa naruto
+naru* -naruto
+
+
+------------------ domain search
+https://www.youtube.com/watch?v=C-2YMhMu5Lc
+
+
+

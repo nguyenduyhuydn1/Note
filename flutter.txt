@@ -43,3 +43,17 @@ https://stackoverflow.com/questions/63309188/how-to-remove-empty-space-in-sliver
 
 ------------------ custom theme data
 https://www.youtube.com/watch?v=Q9FosAdX2U4&t=1113s
+
+
+------------------ CustomScrollView, NestedScrollView
+https://stackoverflow.com/questions/53843828/pageview-with-pages-in-customscrollview-with-flutter
+
+
+
+
+
+
+
+
+test tren ios maf k can mac
+https://stackoverflow.com/questions/47006906/developing-for-ios-device-in-windows-environment-with-flutter
