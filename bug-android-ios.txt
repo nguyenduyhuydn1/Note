@@ -15,4 +15,5 @@ https://www.dbestech.com/tutorials/platformexception-sign-in-failed-com-google-a
 https://www.dbestech.com/tutorials/generate-sha-1-for-flutter-react-native-android-native-app
 
 
------------------- 
+------------------ Use Future with MaterialApp.router
+https://stackoverflow.com/questions/70606501/use-future-with-materialapp-router-in-main-dart

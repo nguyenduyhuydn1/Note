@@ -5,8 +5,10 @@ cached_network_image
 animated_bottom_navigation_bar, scroll_to_index
 
 
------------------- Flutter Custom Sliver App Bar - Basic to Advanced
+------------------ Flutter Custom Sliver App Bar, PreferredSize - Basic to Advanced
 https://www.youtube.com/watch?v=s_3ak-4u43E&t=585s
+
+https://www.youtube.com/watch?v=7dAt-JMSCVQ&list=PL3nPgdhXQtHfgtMpD_0EvJm-8LP3uNfc-&index=20
 
 
 ------------------ trick
@@ -49,10 +51,9 @@ https://www.youtube.com/watch?v=Q9FosAdX2U4&t=1113s
 https://stackoverflow.com/questions/53843828/pageview-with-pages-in-customscrollview-with-flutter
 
 
-
-
-
-
+------------------ animation
+https://www.youtube.com/@TheFlutterWay/playlists
+https://www.youtube.com/watch?v=gTC4FMXRRFM&list=PLxUBb2A_UUy8iZsirTiFng5O8rsbOaVqO
 
 
 test tren ios maf k can mac
