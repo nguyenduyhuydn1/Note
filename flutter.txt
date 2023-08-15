@@ -56,5 +56,9 @@ https://www.youtube.com/@TheFlutterWay/playlists
 https://www.youtube.com/watch?v=gTC4FMXRRFM&list=PLxUBb2A_UUy8iZsirTiFng5O8rsbOaVqO
 
 
+------------------ Carousel Slider
+https://www.youtube.com/watch?v=q0tHhhb7Q3Y
+
+
 test tren ios maf k can mac
 https://stackoverflow.com/questions/47006906/developing-for-ios-device-in-windows-environment-with-flutter
