@@ -1,14 +1,15 @@
 flutter_svg, nimate_do, dio, flutter_dotenv, flutter_riverpod, go_router, shimmer
 
-cached_network_image
+cached_network_image, flutter_staggered_grid_view, table_calendar, date_picker_timeline
 
-animated_bottom_navigation_bar, scroll_to_index
+animated_bottom_navigation_bar, scroll_to_index, animated_digit
 
 
------------------- Flutter Custom Sliver App Bar, PreferredSize - Basic to Advanced
-https://www.youtube.com/watch?v=s_3ak-4u43E&t=585s
+------------------ package bottom-navigation
+https://fluttergems.dev/bottom-navigation-bar/
+https://fluttercore.com/best-11-flutter-bottom-navigation-bar/
 
-https://www.youtube.com/watch?v=7dAt-JMSCVQ&list=PL3nPgdhXQtHfgtMpD_0EvJm-8LP3uNfc-&index=20
+
 
 
 ------------------ trick
@@ -19,14 +20,20 @@ https://www.youtube.com/watch?v=mhxoXm8lWIo&t=68s
 https://www.youtube.com/watch?v=M9J-JJOuyE0&t=6s
 
 
------------------- lutter_advanced_calendar, flutter_advanced_drawer 
+------------------ flutter_advanced_calendar, flutter_advanced_drawer 
 https://github.com/alex-melnyk?tab=repositories
 
 
------------------- fix lỗi mỗi lần run app in emulator thì cache luôn tăng chứ éo giảm
-- sdk manager -> tools -> emulator -> uncheck launch in a tool window
 
 
+
+
+------------------ life circle
+https://stackoverflow.com/questions/41479255/life-cycle-in-flutter
+
+
+
+------------------------------------------------------- Widgets -------------------------------------------------------
 ------------------ defaultTabController
 https://www.youtube.com/shorts/rAHtyVW8Jw4
 
@@ -39,8 +46,12 @@ https://www.youtube.com/watch?v=B7nSjENtocY
 https://stackoverflow.com/questions/59076399/what-is-the-difference-between-an-image-and-imageprovider-in-flutter
 
 
------------------- SliverAppBar scroll tab
+------------------ Flutter Custom Sliver AppBar, PreferredSize - Basic to Advanced
+https://www.youtube.com/watch?v=s_3ak-4u43E&t=585s
+https://www.youtube.com/watch?v=7dAt-JMSCVQ&list=PL3nPgdhXQtHfgtMpD_0EvJm-8LP3uNfc-&index=20
+
 https://stackoverflow.com/questions/63309188/how-to-remove-empty-space-in-sliverappbar
+
 
 
 ------------------ custom theme data
@@ -51,13 +62,87 @@ https://www.youtube.com/watch?v=Q9FosAdX2U4&t=1113s
 https://stackoverflow.com/questions/53843828/pageview-with-pages-in-customscrollview-with-flutter
 
 
+------------------ Carousel Slider vs grid view dynamic height
+https://www.youtube.com/watch?v=q0tHhhb7Q3Y
+https://www.youtube.com/watch?v=XNwL_9ur8R8
+
+
+------------------ calendar
+https://www.youtube.com/watch?v=b3M_r21XFvI
+
+
+------------------ MainAxisSize.min
+https://itnext.io/flutter-mainaxissize-max-vs-min-d9095d8f7914
+------------------------------------------------------- END -------------------------------------------------------
+
+
+
+
+------------------------------------------------------- EFFECT -------------------------------------------------------
+------------------ implicit and explicit
+https://www.kodeco.com/18724197-implicit-animations-in-flutter-getting-started
+https://stackoverflow.com/questions/65066243/animatedbuilder-with-two-different-types-of-animations-not-working
+
+
+
+
+------------------ route Transition 
+https://200lab.io/blog/route-transition-cua-flutter/
+
+
 ------------------ animation
 https://www.youtube.com/@TheFlutterWay/playlists
 https://www.youtube.com/watch?v=gTC4FMXRRFM&list=PLxUBb2A_UUy8iZsirTiFng5O8rsbOaVqO
+https://www.youtube.com/shorts/QXzCwkErilc
+https://www.youtube.com/watch?v=um0M3CYYLh8&list=PL4cUxeGkcC9gP1qg8yj-Jokef29VRCLt1&index=11
+https://www.youtube.com/watch?v=oGejvH0Ct10
+
+animation : thuoc tinh hieu ung
+animationcontroller : duration vsgr curve
 
 
------------------- Carousel Slider
-https://www.youtube.com/watch?v=q0tHhhb7Q3Y
+------------------ transform
+https://stackoverflow.com/questions/44276080/how-do-i-rotate-something-15-degrees-in-flutter
+angle: 15 * math.pi / 180   //15 degrees
+
+
+------------------ RotationTransition
+https://api.flutter.dev/flutter/widgets/RotationTransition-class.html
+https://stackoverflow.com/questions/44276080/how-do-i-rotate-something-15-degrees-in-flutter
+new RotationTransition(
+  turns: new AlwaysStoppedAnimation(15 / 360),
+  child: new Text("Lorem ipsum"),
+)
+
+
+
+
+https://medium.com/flutter/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
+dùng tweenanimation khi ở đó không có một animatedwidget
+
+- AnimatedFoo where “Foo” is the property you want to animate, such as AnimatedOpacity. Also check AnimatedContainer
+- FooTransition, where “Foo” is the property you’re animating, such as SlideTransition.
+
+explicit animations
+- footransition widgets
+- animatedwidget			-dung de custom animation
+- animatedbuilder			-neu khong can custom
+
+implicit animations
+- animatedfoo widgets                    
+- tweenanimationbuilder
+------------------------------------------------------- END -----------------------------------------------------------------------------------------
+
+
+
+
+
+columb co width an theo t cha
+
+
+
+------------------ dart - ke thua
+https://www.topcoder.com/thrive/articles/dart-differences-between-extends-implements-and-mixin
 
 
 test tren ios maf k can mac

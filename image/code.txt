@@ -1,0 +1,428 @@
+import 'package:flutter/material.dart';
+
+class ShadowExamples extends StatelessWidget {
+  const ShadowExamples({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Wrap(
+          spacing: 80.0,
+          runSpacing: 40.0,
+          children: const [
+            
+            //CSS box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            CustomBoxShadow(
+              name: '1',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(149, 157, 165, 0.2),
+                  offset: Offset(0, 8),
+                  blurRadius: 24,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            CustomBoxShadow(
+              name: '2',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(100, 100, 111, 0.2),
+                  offset: Offset(0, 7),
+                  blurRadius: 29,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            CustomBoxShadow(
+              name: '3',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.15),
+                  offset: Offset(1.95, 1.95),
+                  blurRadius: 2.6,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            CustomBoxShadow(
+              name: '4',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.35),
+                  offset: Offset(0, 5),
+                  blurRadius: 15,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            CustomBoxShadow(
+              name: '5',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                  offset: Offset(0, 1),
+                  blurRadius: 4,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            CustomBoxShadow(
+              name: '6',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.24),
+                  offset: Offset(0, 3),
+                  blurRadius: 8,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            CustomBoxShadow(
+              name: '7',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(99, 99, 99, 0.2),
+                  offset: Offset(0, 2),
+                  blurRadius: 8,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+            CustomBoxShadow(
+              name: '8',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                  offset: Offset(0, 1),
+                  blurRadius: 4,
+                  spreadRadius: 0,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(51, 51, 51, 1.0),
+                  offset: Offset(0, 0),
+                  blurRadius: 0,
+                  spreadRadius: 3,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            CustomBoxShadow(
+              name: '9',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.2),
+                  offset: Offset(0, 1),
+                  blurRadius: 3,
+                  spreadRadius: 0,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(27, 31, 35, 0.15),
+                  offset: Offset(0, 0),
+                  blurRadius: 0,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            CustomBoxShadow(
+              name: '10',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.1),
+                  offset: Offset(0, 4),
+                  blurRadius: 12,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow:
+            CustomBoxShadow(
+              name: '11',
+              boxShadow: [
+                //rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.25),
+                  offset: Offset(0, 54),
+                  blurRadius: 55,
+                  spreadRadius: 0,
+                ),
+                //rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.12),
+                  offset: Offset(0, -12),
+                  blurRadius: 30,
+                  spreadRadius: 0,
+                ),
+                //rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.12),
+                  offset: Offset(0, 4),
+                  blurRadius: 6,
+                  spreadRadius: 0,
+                ),
+                //rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.17),
+                  offset: Offset(0, 12),
+                  blurRadius: 13,
+                  spreadRadius: 0,
+                ),
+                //rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.09),
+                  offset: Offset(0, -3),
+                  blurRadius: 5,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            CustomBoxShadow(
+              name: '12',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.05),
+                  offset: Offset(0, 6),
+                  blurRadius: 24,
+                  spreadRadius: 0,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.08),
+                  offset: Offset(0, 0),
+                  blurRadius: 0,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            CustomBoxShadow(
+              name: '13',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                  offset: Offset(0, 10),
+                  blurRadius: 36,
+                  spreadRadius: 0,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.06),
+                  offset: Offset(0, 0),
+                  blurRadius: 0,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            CustomBoxShadow(
+              name: '14',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(17, 12, 46, 0.15),
+                  offset: Offset(0, 48),
+                  blurRadius: 100,
+                  spreadRadius: 0,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            CustomBoxShadow(
+              name: '15',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(50, 50, 93, 0.25),
+                  offset: Offset(0, 50),
+                  blurRadius: 100,
+                  spreadRadius: -20,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  offset: Offset(0, 30),
+                  blurRadius: 60,
+                  spreadRadius: -30,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            CustomBoxShadow(
+              name: '16',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(50, 50, 93, 0.25),
+                  offset: Offset(0, 13),
+                  blurRadius: 27,
+                  spreadRadius: -5,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  offset: Offset(0, 8),
+                  blurRadius: 16,
+                  spreadRadius: -8,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            CustomBoxShadow(
+              name: '17',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(50, 50, 93, 0.25),
+                  offset: Offset(0, 2),
+                  blurRadius: 5,
+                  spreadRadius: -1,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  offset: Offset(0, 1),
+                  blurRadius: 3,
+                  spreadRadius: -1,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            CustomBoxShadow(
+              name: '18',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(38, 57, 77, 1.0),
+                  offset: Offset(0, 20),
+                  blurRadius: 30,
+                  spreadRadius: -10,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow:
+            CustomBoxShadow(
+              name: '19',
+              boxShadow: [
+                //rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+                BoxShadow(
+                  color: Color.fromRGBO(6, 24, 44, 0.4),
+                  offset: Offset(0, 0),
+                  blurRadius: 0,
+                  spreadRadius: 2,
+                ),
+                //rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+                BoxShadow(
+                  color: Color.fromRGBO(6, 24, 44, 0.65),
+                  offset: Offset(0, 4),
+                  blurRadius: 6,
+                  spreadRadius: -1,
+                ),
+                //rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+                BoxShadow(
+                  color: Color.fromRGBO(255, 255, 255, 0.08),
+                  offset: Offset(0, 0),
+                  blurRadius: 0,
+                  spreadRadius: -1,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            CustomBoxShadow(
+              name: '20',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(50, 50, 93, 0.25),
+                  offset: Offset(0, 6),
+                  blurRadius: 12,
+                  spreadRadius: -2,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  offset: Offset(0, 3),
+                  blurRadius: 7,
+                  spreadRadius: -3,
+                ),
+              ],
+            ),
+
+            //CSS box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            CustomBoxShadow(
+              name: '21',
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(50, 50, 93, 0.25),
+                  offset: Offset(0, 13),
+                  blurRadius: 27,
+                  spreadRadius: -5,
+                ),
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  offset: Offset(0, 8),
+                  blurRadius: 16,
+                  spreadRadius: -8,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomBoxShadow extends StatelessWidget {
+  final String name;
+  final List<BoxShadow>? boxShadow;
+  const CustomBoxShadow({
+    Key? key,
+    required this.name,
+    this.boxShadow,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(height: 8),
+        Text(
+          name,
+          style: const TextStyle(fontSize: 20),
+        ),
+        const SizedBox(height: 8),
+        Container(
+          height: 100,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            shape: BoxShape.rectangle,
+            color: Colors.white,
+            boxShadow: boxShadow,
+          ),
+        ),
+        const SizedBox(height: 8),
+      ],
+    );
+  }
+}

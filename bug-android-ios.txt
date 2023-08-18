@@ -2,7 +2,7 @@
 physics: const BouncingScrollPhysics(),
 
 
------------------- lỗi tràn dữ liệu ở android studio
+------------------ lỗi tràn dữ liệu ở android studio, fix lỗi mỗi lần run app in emulator thì cache luôn tăng chứ éo giả
 1 - wipe data
 2 - setting -> tools -> Emulator -> uncheck launch in a tool window
 
