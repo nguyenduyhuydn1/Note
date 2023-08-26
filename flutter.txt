@@ -2,22 +2,86 @@ flutter_svg, nimate_do, dio, flutter_dotenv, flutter_riverpod, go_router, shimme
 
 cached_network_image, flutter_staggered_grid_view, table_calendar, date_picker_timeline
 
-animated_bottom_navigation_bar, scroll_to_index, animated_digit
+animated_bottom_navigation_bar, scroll_to_index, animated_digit, slide_to_act 
+
+pixel_perfect
+
+
+
+
+widget is an immutable description of part of user interface
+element is an instantiation of a widget at a particular location in the tree
+renderobject handle size, layout, painting
+https://www.youtube.com/watch?v=996ZgFRENMs
+
+
+------------------ custom painter,canvas draw 
+https://www.youtube.com/watch?v=HyAeZKWWuxA&list=PL3wGb9_yWsvKfjFgXntI_uxUV7R0L0Act
+
+
+
+------------------ xu ly nhieu tac vu nang ma khong bi block
+https://www.youtube.com/watch?v=WFfaaLwLobA
+
+
+-------coccoc
+https://create.vista.com/user/projects/64e16eaf80d70440fad43914/
+
+
+
+------------------ test two device
+https://www.youtube.com/watch?v=JQ9jCjsRejE
+
+
+
+------------------ perfect pixel	
+
+https://www.youtube.com/watch?v=L4G_ylrmKQ8
+
+
+
+check bug
+https://www.youtube.com/@RobertBrunhage/videos
+
+------------------ explain
+https://www.youtube.com/watch?v=WUZVO1CLXqw
 
 
 ------------------ package bottom-navigation
 https://fluttergems.dev/bottom-navigation-bar/
 https://fluttercore.com/best-11-flutter-bottom-navigation-bar/
 
+https://www.youtube.com/watch?v=XgGOGVKGepQ
+
+using clipper paint
+https://www.youtube.com/watch?v=OR2DMRnEXkA&t=2102s
+
+
+
+
+
+
+
 
 
 
 ------------------ trick
+https://www.youtube.com/shorts/cMLAKRJluVA
 https://www.youtube.com/watch?v=Kq5ZsygfWAc
 
 https://www.youtube.com/watch?v=0QjQ0vhwCFI
 https://www.youtube.com/watch?v=mhxoXm8lWIo&t=68s
 https://www.youtube.com/watch?v=M9J-JJOuyE0&t=6s
+
+https://www.youtube.com/watch?v=EH92XnCU1Cc
+https://www.youtube.com/watch?v=TlbbIQykHK0
+https://www.youtube.com/watch?v=ILATAD57gIc
+
+
+------------------ responsive
+https://www.youtube.com/watch?v=EH92XnCU1Cc
+https://www.youtube.com/watch?v=gK288ZfzjCc
+
 
 
 ------------------ flutter_advanced_calendar, flutter_advanced_drawer 
@@ -33,7 +97,57 @@ https://stackoverflow.com/questions/41479255/life-cycle-in-flutter
 
 
 
+
+------------------ update ui
+https://www.youtube.com/watch?v=Ot7hIAzxj4o
+
+
+------------------ handle exception
+https://www.youtube.com/watch?v=cx-RhtNFyXk
+
+
+
+------------------------------------------------------- handle background , foreground - widgetsbiding -------------------------------------------------------
+https://www.youtube.com/watch?v=JyapvlrmM24
+https://www.youtube.com/watch?v=SnbKGMnjv_s
+------------------------------------------------------- END -------------------------------------------------------
+
+
 ------------------------------------------------------- Widgets -------------------------------------------------------
+------------------ detail attributes widgets
+https://www.youtube.com/watch?v=_PIYLFVBBWM&list=PLybADvIp2cxiVOEHi9ooCHP2tAAihHQPX&index=10
+https://www.youtube.com/watch?v=x1LHDKLDT38
+
+
+------------------ custom button ripple
+https://www.youtube.com/watch?v=VBEyAppUCzc
+https://www.youtube.com/watch?v=VISoK50eKvM
+
+
+
+------------------ all widget
+https://www.youtube.com/watch?v=G1LGOH424lo
+
+
+
+------------------ Futures and Streams
+https://www.youtube.com/watch?v=lkpPg0ieklg
+
+
+
+
+------------------ Difference between Flutter LayoutBuilder and MediaQuery
+https://blog.codemagic.io/building-responsive-applications-with-flutter/
+
+
+------------------ flexible
+https://www.youtube.com/watch?v=5TwBXLZdVvk
+
+
+------------------ interact viewer
+https://www.youtube.com/watch?v=Jb5SUSlJrqc
+
+
 ------------------ defaultTabController
 https://www.youtube.com/shorts/rAHtyVW8Jw4
 
@@ -78,63 +192,6 @@ https://itnext.io/flutter-mainaxissize-max-vs-min-d9095d8f7914
 
 
 
-------------------------------------------------------- EFFECT -------------------------------------------------------
------------------- implicit and explicit
-https://www.kodeco.com/18724197-implicit-animations-in-flutter-getting-started
-https://stackoverflow.com/questions/65066243/animatedbuilder-with-two-different-types-of-animations-not-working
-
-
-
-
------------------- route Transition 
-https://200lab.io/blog/route-transition-cua-flutter/
-
-
------------------- animation
-https://www.youtube.com/@TheFlutterWay/playlists
-https://www.youtube.com/watch?v=gTC4FMXRRFM&list=PLxUBb2A_UUy8iZsirTiFng5O8rsbOaVqO
-https://www.youtube.com/shorts/QXzCwkErilc
-https://www.youtube.com/watch?v=um0M3CYYLh8&list=PL4cUxeGkcC9gP1qg8yj-Jokef29VRCLt1&index=11
-https://www.youtube.com/watch?v=oGejvH0Ct10
-
-animation : thuoc tinh hieu ung
-animationcontroller : duration vsgr curve
-
-
------------------- transform
-https://stackoverflow.com/questions/44276080/how-do-i-rotate-something-15-degrees-in-flutter
-angle: 15 * math.pi / 180   //15 degrees
-
-
------------------- RotationTransition
-https://api.flutter.dev/flutter/widgets/RotationTransition-class.html
-https://stackoverflow.com/questions/44276080/how-do-i-rotate-something-15-degrees-in-flutter
-new RotationTransition(
-  turns: new AlwaysStoppedAnimation(15 / 360),
-  child: new Text("Lorem ipsum"),
-)
-
-
-
-
-https://medium.com/flutter/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
-dùng tweenanimation khi ở đó không có một animatedwidget
-
-- AnimatedFoo where “Foo” is the property you want to animate, such as AnimatedOpacity. Also check AnimatedContainer
-- FooTransition, where “Foo” is the property you’re animating, such as SlideTransition.
-
-explicit animations
-- footransition widgets
-- animatedwidget			-dung de custom animation
-- animatedbuilder			-neu khong can custom
-
-implicit animations
-- animatedfoo widgets                    
-- tweenanimationbuilder
-------------------------------------------------------- END -----------------------------------------------------------------------------------------
-
-
-
 
 
 columb co width an theo t cha
@@ -147,3 +204,41 @@ https://www.topcoder.com/thrive/articles/dart-differences-between-extends-implem
 
 test tren ios maf k can mac
 https://stackoverflow.com/questions/47006906/developing-for-ios-device-in-windows-environment-with-flutter
+
+
+
+
+
+
+
+
+
+
+
+
+
+config
+features
+	domain
+		datasources
+		entities
+		repositories
+	infrastructure
+		datasources
+		models
+		repositories
+	presentation
+		screens
+		views
+		widgets
+	shared
+		
+
+
+
+
+
+
+
+
+

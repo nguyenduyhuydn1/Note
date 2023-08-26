@@ -17,3 +17,31 @@ https://www.dbestech.com/tutorials/generate-sha-1-for-flutter-react-native-andro
 
 ------------------ Use Future with MaterialApp.router
 https://stackoverflow.com/questions/70606501/use-future-with-materialapp-router-in-main-dart
+
+
+
+------------------ Unbounded height / width
+https://www.youtube.com/watch?v=jckqXR5CrPI
+
+
+
+------------------ bottom overflow
+https://www.youtube.com/watch?v=voARoVV_EDI
+
+
+
+
+
+
+// eror
+// SingleChildScrollView -> Column -> Expanded -> Row 
+// no error
+// SingleChildScrollView -> Column -> Row -> <Expanded>
+// no error
+// Column -> <Expanded> -> Row
+// no error
+// Column -> <Expanded> -> Row -> <Expanded> -> listview
+// no error
+// Column -> <Expanded> -> listview
+
+
