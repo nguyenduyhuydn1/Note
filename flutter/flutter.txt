@@ -4,7 +4,35 @@ cached_network_image, flutter_staggered_grid_view, table_calendar, date_picker_t
 
 animated_bottom_navigation_bar, scroll_to_index, animated_digit, slide_to_act 
 
-pixel_perfect
+flutter_rating_bar
+
+
+----------- video player
+chewie
+
+------------- auto scroll
+https://www.youtube.com/watch?v=Vc2YLoa0Cns
+
+
+
+Beautiful hidden Menu in Flutter
+https://www.youtube.com/watch?v=-PUZ8LrWFWc&list=PLHRVPF7i77EUrMnigmGIcPBLaig_kLna7
+
+
+
+
+------------------ for ios style icons
+cupertino_icons 
+
+
+------------------ use globalkey
+https://blog.logrocket.com/how-to-add-navigation-drawer-flutter/
+
+
+------------------ scrolling parallax effect
+https://www.youtube.com/watch?v=ZPdG0mCtTYg
+https://github.com/maxonflutter/flutter_movies_app_ui/blob/master/lib/widgets/movie_list_item.dart
+
 
 
 
@@ -13,6 +41,21 @@ widget is an immutable description of part of user interface
 element is an instantiation of a widget at a particular location in the tree
 renderobject handle size, layout, painting
 https://www.youtube.com/watch?v=996ZgFRENMs
+
+
+
+map
+https://www.youtube.com/watch?v=9v44lAagZCI
+https://www.youtube.com/watch?v=y_4VMNgUgGM&t=251s
+https://www.youtube.com/watch?v=3XN0T09Mk4w
+
+
+
+share text and file
+https://www.youtube.com/watch?v=CNUBhb_cM6E
+
+su kien rung .... tren ios android
+https://www.youtube.com/watch?v=aE8I66qr9Qw
 
 
 ------------------ custom painter,canvas draw 
