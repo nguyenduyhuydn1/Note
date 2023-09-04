@@ -1,0 +1,6 @@
+Flutter Riverpod ref.read() vs ref.listen() vs ref.watch()
+https://stackoverflow.com/questions/71813090/flutter-riverpod-ref-read-vs-ref-listen-vs-ref-watch
+
+
+widgetsbinding  vs schedulerbinding
+https://viblo.asia/p/flutter-schedulerbinding-vs-widgetsbinding-bWrZnWzQlxw
