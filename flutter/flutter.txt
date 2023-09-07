@@ -1,8 +1,8 @@
-flutter_svg, nimate_do, dio, flutter_dotenv, flutter_riverpod, go_router, shimmer
+flutter_svg, animate_do, dio, flutter_dotenv, flutter_riverpod, go_router, shimmer
 
 cached_network_image, flutter_staggered_grid_view, table_calendar, date_picker_timeline
 
-animated_bottom_navigation_bar, scroll_to_index, animated_digit, slide_to_act 
+animated_bottom_navigation_bar, scroll_to_index, animated_digit, slide_to_act , card_swiper
 
 flutter_rating_bar
 
