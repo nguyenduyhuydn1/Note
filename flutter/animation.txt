@@ -1,3 +1,10 @@
+handle time delay between two animation
+https://stackoverflow.com/questions/63120258/need-delay-between-two-flutter-transitions-in-animatedswitcher
+
+animation choose
+https://medium.com/flutter-community/flutter-animations-comprehensive-guide-cb93b246ca5d
+
+
 course animation
 https://www.youtube.com/watch?v=9hhWjjL2Z7Q&list=PL6yRaaP0WPkW3kwAerPeRqGBvJfO8O4S7&index=9
 
@@ -121,4 +128,4 @@ implicit animations
 ------------------------------------------------------- END -----------------------------------------------------------------------------------------
 
 
-
+https://www.youtube.com/watch?v=INruEE8M7zk&t=896s	14:00

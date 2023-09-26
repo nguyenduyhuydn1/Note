@@ -9,6 +9,23 @@ flutter_rating_bar
 
 
 
+ios style
+https://docs.flutter.dev/ui/widgets/cupertino
+
+
+
+provider
+https://viblo.asia/p/flutter-tim-hieu-ve-state-management-voi-provider-LzD5d1wOKjY
+
+curves
+https://api.flutter.dev/flutter/animation/Curves-class.html
+
+
+
+
+
+
+
 ----------- video player
 chewie
 
