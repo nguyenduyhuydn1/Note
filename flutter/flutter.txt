@@ -8,6 +8,19 @@ flutter_rating_bar
 
 
 
+nguyên tắc load ảnh là phải resize lấy thumb rồi lưu local sau đó load ra imageview.
+https://pub.dev/packages/image
+https://www.youtube.com/watch?v=fhG_9YLbUSE
+
+
+
+
+display image from byte data
+https://stackoverflow.com/questions/65615854/how-can-i-display-image-from-byte-data-in-flutter
+
+
+
+
 
 ios style
 https://docs.flutter.dev/ui/widgets/cupertino

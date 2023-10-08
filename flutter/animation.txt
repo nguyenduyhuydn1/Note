@@ -1,3 +1,7 @@
+curves flutter
+https://api.flutter.dev/flutter/animation/Curves-class.html
+
+
 handle time delay between two animation
 https://stackoverflow.com/questions/63120258/need-delay-between-two-flutter-transitions-in-animatedswitcher
 
