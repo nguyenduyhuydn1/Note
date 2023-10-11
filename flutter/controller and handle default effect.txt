@@ -1,3 +1,16 @@
+xu ly nhung trang thai bar ngoai man hinh
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent
+  ));
+
+
+
+
+
+
+
+
+
 best website tutorial
 https://www.youtube.com/@KhoobCoding
 

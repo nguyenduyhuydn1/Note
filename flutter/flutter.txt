@@ -8,6 +8,15 @@ flutter_rating_bar
 
 
 
+animation roi
+sakura_blizzard 
+animated_background 
+
+chart
+syncfusion_flutter_charts 
+chart_sparkline
+
+
 nguyên tắc load ảnh là phải resize lấy thumb rồi lưu local sau đó load ra imageview.
 https://pub.dev/packages/image
 https://www.youtube.com/watch?v=fhG_9YLbUSE
