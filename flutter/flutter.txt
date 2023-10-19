@@ -8,6 +8,17 @@ flutter_rating_bar
 
 
 
+
+
+
+alert dialog
+awesome_dialog
+quickalert
+awesome_snackbar_content
+
+
+
+
 animation roi
 sakura_blizzard 
 animated_background 
@@ -41,6 +52,31 @@ https://viblo.asia/p/flutter-tim-hieu-ve-state-management-voi-provider-LzD5d1wOK
 
 curves
 https://api.flutter.dev/flutter/animation/Curves-class.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Flutter calling child class function from parent class
+https://stackoverflow.com/questions/53692798/flutter-calling-child-class-function-from-parent-class
 
 
 
@@ -137,8 +173,6 @@ https://fluttercore.com/best-11-flutter-bottom-navigation-bar/
 
 https://www.youtube.com/watch?v=XgGOGVKGepQ
 
-using clipper paint
-https://www.youtube.com/watch?v=OR2DMRnEXkA&t=2102s
 
 
 
