@@ -22,11 +22,6 @@ animation roi
 sakura_blizzard 
 animated_background 
 
-
-Flutter Staggered Animations list
-https://github.com/The-ring-io/flutter_staggered_animations/tree/master#flutter-staggered-animations
-
-
 chart
 fl_chart
 syncfusion_flutter_charts 
@@ -34,29 +29,8 @@ chart_sparkline
 
 
 
-undo/redo
-another_flushbar
-https://github.com/cmdrootaccess/another-flushbar/tree/main
 
 
-
-Percent Indicator
-https://github.com/diegoveloper/flutter_percent_indicator/
-
-
-
-circular_countdown_timer
-https://pub.dev/packages/circular_countdown_timer
-
-
-
-
-
-timeline_tile
-https://pub.dev/packages/timeline_tile
-https://github.com/chulwoo-park/timelines/tree/main
-
-https://itsallwidgets.com/beautiful-timelines
 
 
 

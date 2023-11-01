@@ -1,9 +1,3 @@
-
-add delay betweenn animation repeat
-https://stackoverflow.com/questions/64236824/how-to-add-some-delay-between-animationcontroller-repeat-in-flutter
-
-
-
 curves flutter
 https://api.flutter.dev/flutter/animation/Curves-class.html
 

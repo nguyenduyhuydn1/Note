@@ -1,0 +1,25 @@
+---------------------------------------- change color active indent editor ----------------------------------------
+"workbench.colorCustomizations": {
+    "editorIndentGuide.activeBackground1": "#ff0000",
+}
+
+
+---------------------------------------- tree indent view dart ----------------------------------------
+ctrl + , va search "preview ui"
+
+
+----------------------------------------  compact folder ---------------------------------------- 
+"explorer.compactFolders": false,
+
+
+
+---------------------------------------- insert semicolon on save ---------------------------------------- 
+"editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "quickfix.insertSemicolon": true,
+},
+
+
+
+---------------------------------------- fix add const on save ----------------------------------------
+select "always" in Flutter Hot Reload On Save (settings file)

@@ -9,6 +9,8 @@
 ------------------ cinema app
 https://github.com/Klerith/flutter-cinemapedia
 
+flutter-teslo
+https://github.com/Klerith/flutter-teslo-app/tree/fin-seccion-30
 
 
 ------------------ list button etc ..

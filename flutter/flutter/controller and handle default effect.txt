@@ -1,0 +1,91 @@
+xu ly nhung trang thai bar ngoai man hinh
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent
+  ));
+
+
+
+
+
+
+
+
+
+best website tutorial
+https://www.youtube.com/@KhoobCoding
+
+
+----------------- search and filter
+https://www.youtube.com/watch?v=JZDcRyOWuWc
+
+
+
+----------------- ShowCaseView
+https://www.youtube.com/watch?v=kXdduGu6s-w
+
+
+----------------- Bottom Navigation Bar
+https://www.youtube.com/watch?v=eVUvodxx0qA
+
+
+----------------- TabBar & TabBarView
+https://www.youtube.com/watch?v=VCMEFEArtIM
+
+
+
+----------------- Create Page Transition
+https://www.youtube.com/watch?v=qKmuYTnB3RI&t=1034s
+
+
+
+----------------- How to Remove Scroll Glow Effect
+https://www.youtube.com/watch?v=I6dXFRJQp1g
+
+
+----------------- How to Create a Splash Screen
+https://www.youtube.com/watch?v=Rndtj24TXJE
+
+
+
+----------------- How to Check Internet Connectivity
+https://www.youtube.com/watch?v=lkoX2deERzw
+
+
+
+----------------- How to Change Application Status Bar Color And Navigation Bar Color
+https://www.youtube.com/watch?v=2OEUOHJrWLg
+
+
+
+----------------- Pick Image From Camera and Gallery
+https://www.youtube.com/watch?v=xppRv1XM_JE
+
+
+
+----------------- Pick Video From Camera and Gallery
+https://www.youtube.com/watch?v=vAlKx5yl_9Y
+
+
+----------------- File Picker
+https://www.youtube.com/watch?v=RoQtR3v1gcg
+
+
+
+----------------- url laucher
+https://www.youtube.com/watch?v=wjnSZFJpajU
+
+
+----------------- Video Chat 
+https://www.youtube.com/watch?v=4L3FbzxFHCk
+
+
+----------------- Color Picker
+https://www.youtube.com/watch?v=f51tAH2BVYE
+
+
+----------------- share content with other app
+https://www.youtube.com/watch?v=e3_9yQKrEF4
+
+
+----------------- Passing Data Between Screens
+https://www.youtube.com/watch?v=HfDmbISPVn0
