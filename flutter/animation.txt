@@ -4,6 +4,12 @@ https://stackoverflow.com/questions/64236824/how-to-add-some-delay-between-anima
 
 
 
+
+
+animation move
+https://stackoverflow.com/questions/69422633/move-an-item-from-one-list-to-another-with-animation-in-flutter#_=_
+
+
 curves flutter
 https://api.flutter.dev/flutter/animation/Curves-class.html
 

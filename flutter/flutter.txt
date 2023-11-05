@@ -8,6 +8,9 @@ flutter_rating_bar
 
 
 
+Bubble Tab Indicator
+https://github.com/vipulasri/flutter_bubble_tab_indicator/tree/master
+add bubble vao tabbar
 
 
 alert dialog
@@ -47,6 +50,31 @@ https://github.com/diegoveloper/flutter_percent_indicator/
 
 circular_countdown_timer
 https://pub.dev/packages/circular_countdown_timer
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://stackoverflow.com/questions/71122802/how-to-run-flutter-app-in-ios-devices-from-windows
+
+
+
+
+
+
+
+
+
+
+
 
 
 
