@@ -6,6 +6,10 @@ animated_bottom_navigation_bar, scroll_to_index, animated_digit, slide_to_act , 
 
 flutter_rating_bar
 
+auto_size_text
+
+device_preview
+
 
 
 Bubble Tab Indicator

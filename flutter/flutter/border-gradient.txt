@@ -1,6 +1,0 @@
-https://stackoverflow.com/questions/70871081/circle-progress-gradient-border-in-flutter
-https://stackoverflow.com/questions/55395641/outlined-transparent-button-with-gradient-border-in-flutter
-https://stackoverflow.com/questions/69866006/how-to-make-the-border-of-a-container-two-colored-in-flutter
-https://stackoverflow.com/questions/59527279/how-to-make-custom-tabbar-with-gradient
-https://stackoverflow.com/questions/70012111/how-to-create-a-gradient-border-for-a-container
-https://stackoverflow.com/questions/66185071/flutter-image-with-gradient-border-color
