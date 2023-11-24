@@ -12,6 +12,23 @@ device_preview
 
 
 
+
+QR code
+https://lottiefiles.com/search?q=Scan&category=animations
+scan qr 
+
+
+
+
+
+
+photo manager
+photo_manager
+
+
+
+
+
 Bubble Tab Indicator
 https://github.com/vipulasri/flutter_bubble_tab_indicator/tree/master
 add bubble vao tabbar
