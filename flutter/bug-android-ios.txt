@@ -32,6 +32,26 @@ https://www.youtube.com/watch?v=voARoVV_EDI
 
 
 
+------------------ How to remove scroll glow?
+https://stackoverflow.com/questions/51119795/how-to-remove-scroll-glow
+https://www.youtube.com/watch?v=I6dXFRJQp1g
+
+
+
+
+
+
+------------------ xu ly nhung trang thai bar ngoai man hinh
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent
+  ));
+
+
+
+
+
+
+
 
 // eror
 // SingleChildScrollView -> Column -> Expanded -> Row 
