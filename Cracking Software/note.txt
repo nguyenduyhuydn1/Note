@@ -1,0 +1,44 @@
+- cấu trúc 1 function
+push ebp
+mov ebp,esp
+....
+leave
+ret
+
+
+
+
+
+- ESI,EDI thường được dùng để lưu trữ chuỗi
+	ESI thường được dùng để lưu source string
+	EDI thường được dùng để lưu điểm đến của string
+
+- EIP là nơi lưu trữ địa chỉ của current instruction 
+- ESP = top of the stack
+  EBP = bottom of the stack
+
+
+
+
+qword 8 bytes
+dword 4 bytes
+word 2 bytes
+
+
+
+
+
+- mov dword ptr ds:["memory address"], eax
+ds = data segment
+
+Code – The segment where actual code is stored and is represented by the .text section. It mainly contains assembly language instructions and can not be expanded once program execution begins.
+
+Data – Represented by the .data and .bss sections, it is used to declare global and local variables. It remains static throughout the program.
+
+Stack – In this memory segment, data may be initialized at run-time. It acts as temporary storage and follows the Last In First Out protocol, which means that elements are only added or removed from the top.
+
+
+
+
+
+
