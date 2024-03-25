@@ -1,3 +1,6 @@
+https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
+
+
 - cấu trúc 1 function
 push ebp
 mov ebp,esp
