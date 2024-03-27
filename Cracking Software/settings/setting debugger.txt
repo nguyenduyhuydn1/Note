@@ -1,0 +1,8 @@
+setting -> preferences -> uncheck "TLS callbacks" and uncheck "system breakpoint*"
+
+setting -> preferences -> Exceptions -> add range 
+					start "00000000"
+					end   "ffffffff"
+					this mean that u can ignore all these errors
+
+
