@@ -1,4 +1,5 @@
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
+https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
 
 
@@ -73,14 +74,28 @@ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - lessons CSL
 crackMe 2 - Cracking Registration File Checks
 crackME 3 - Removing Nag Screens
-
-
-
-
-
+crackme 4 - Cracking Trial Period Software
+crackme 5 - Cracking Auto-Generated Serial Keys	(important)
 
 
 
