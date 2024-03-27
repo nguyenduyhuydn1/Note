@@ -12,12 +12,13 @@ ret
 
 
 
-
-
+- EAX: the primary accumulator
+- EBX: base register
+- ECX: count register
+- EDX: data register
 - ESI,EDI thường được dùng để lưu trữ chuỗi
 	ESI thường được dùng để lưu source string
 	EDI thường được dùng để lưu điểm đến của string
-
 - EIP là nơi lưu trữ địa chỉ của current instruction 
 - ESP = top of the stack
   EBP = bottom of the stack
@@ -63,6 +64,16 @@ https://viblo.asia/p/toi-da-hoc-assembly-32bit-nhu-the-nao-phan-2-1Je5EmDG5nL
 
 - OF (overflow flag)
 	OF = 1 khi kết quả của phép toán có dấu lớn hơn so với kích thước của địa chỉ đích hoặc phép tính sai
+
+- DF (direction flag)
+	this flag controls whether the string address increase or decrease after each string instruction
+	DF = 0 mean EDI address increases after each string operation
+	DF = 1 mean EDI address decreases after each string operation
+	CLD will clear the DF flag (DF = 0)
+	STD will set the DF flag (DF = 1)
+	default DF = 0
+
+
 
 - chúng ta nhìn vào CF và OF khi
 	nếu chương trình dùng Unsigned Numbers thì ta tập trung vào CF flag
