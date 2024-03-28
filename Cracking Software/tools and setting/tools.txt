@@ -1,0 +1,22 @@
+- https://x64dbg.com/
+	setting -> preferences -> uncheck "TLS callbacks" and uncheck "system breakpoint*"
+
+	setting -> preferences -> Exceptions -> add range 
+							start "00000000"
+							end   "ffffffff"
+							this mean that u can ignore all these errors
+
+
+- https://github.com/horsicq/Detect-It-Easy
+
+- https://github.com/ThunderCls/xAnalyzer
+	plugin analytics cac lenh den comment ho tro nguoi dung de doc, de hieu
+
+
+
+
+
+
+- x64dbg -> release -> x32 (x64) -> db
+	- nơi lưu các comment, command, breakpoint cái mà ta đã thêm khi debug xóa hết chúng ta clear các thứ đáy khỏi phần mềm mà ta muốn debug
+

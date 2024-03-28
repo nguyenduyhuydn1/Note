@@ -1,6 +1,16 @@
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
 https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
+https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
+
+
+
+
+
+https://www.asciitable.com/
+
+msdn
+
 
 
 - cấu trúc 1 function
@@ -13,6 +23,7 @@ ret
 
 
 - EAX: the primary accumulator
+	eax thường được dùng để lưu kết quả của func call, operation or so sánh, lệnh jump đôi khi cũng dựa trên kết quả được lưu ở eax
 - EBX: base register
 - ECX: count register
 - EDX: data register
@@ -36,6 +47,7 @@ word 2 bytes
 
 - mov dword ptr ds:["memory address"], eax
 ds = data segment
+ss = stack segment	(no goi o phan stack)
 
 Code – The segment where actual code is stored and is represented by the .text section. It mainly contains assembly language instructions and can not be expanded once program execution begins.
 
@@ -94,6 +106,20 @@ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
 
 
 
+instructions
+test eax,eax
+je 0x11111
+	check if eax = 0 then it will nhay
+	tùy vào điều kiện jump mà lênh test có thể thay đổi 
+
+test eax, eax  ; set SF to 1 if eax < 0 (negative)
+js error ; jump if SF == 1
+
+
+
+
+
+
 
 
 
@@ -105,8 +131,14 @@ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
 - lessons CSL
 crackMe 2 - Cracking Registration File Checks
 crackME 3 - Removing Nag Screens
-crackme 4 - Cracking Trial Period Software
-crackme 5 - Cracking Auto-Generated Serial Keys	(important)
+crackme 4 - Cracking Trial Period Software - (important)
+crackme 5 - Cracking Auto-Generated Serial Keys	- (important)
+crackme 6 - Removing Nag Screen by TDC
+crackme 7 - Cracking by patching eax register values
+crackme 8 - Cracking via Hardware Breakpoints
+crackme 9 - How to Change Serial Key By Patching Memory Directly - (important)
+crackme 10 - Serial Fishing - how to extract serial key - (important)
+
 
 
 
@@ -128,8 +160,23 @@ crackme 5 - Cracking Auto-Generated Serial Keys	(important)
 - set BP on intermodular calls
 - set BP from call stack
 
+- đầu tiền chúng ta tìm bad message 
+	- sau đó ta theo dõi lệnh jump kiểm tra vì sao nó nhảy tới bad message
+	- sau đó chúng ta nhìn vào eax xem nó bằng fffffff hay 00000000 
+		- nếu là 00000000 thì kết quả đang đúng
+		- nếu là ffffffff thì kết quả đang sai và chúng ta cần theo dõi eax phía trên để tìm tại sao nó lại ffffffff từ đó ta có thể sửa đổi giá trị hoặc tìm ra password để nhảy tới good message
+			- khi ta tìm ra 1 register so sanh khiến nó thành ffffffff mà không có sự so sánh chuỗi hay đọc file .... thì ta chỉ cần sửa lệnh tới good message vì nó sẽ không ảnh hưởng đến chức năng
+			- khi ta tìm ra 1 func hay 1 sự so sánh thì ta có thể vào mà check và có thể extract password
+			- nếu đó là func của window api ta cần check document để xem nó trả về cái gì và xử lý tiếp
 
 
+
+
+
+
+- ReadFile window API
+	+ dữ liệu của file sẽ được lưu ở địa tri với biến lpNumberOfBytesRead
+	+ nNumberOfBytesToRead : The maximum number of bytes to be read.
 
 
 

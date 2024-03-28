@@ -1,3 +1,8 @@
+exec, test, match, replace, search và split
+
+
+
+
 ------------------------------------ patterns
 ------------------ <.+?>
 - ? có nghĩa là match với số lần càng nhiều càng tốt
@@ -18,6 +23,26 @@ const replacePositionPractical = (n = 3) => {
 
 ------------------ (?<=title=").+?(?=")
 - lấy các giá trị attribute của tag
+
+
+
+
+
+
+
+
+
+https://stackoverflow.com/questions/8374742/regex-last-occurrence
+((?!\\).)+$		-- match voi phan tu cuoi cung 
+VD: C:\\Users\\huy\\Desktop\\auto tool upload video\\Assembly Language Programming for Reverse Engineering\\24 - Windows API\\003 ReadFile and WriteFile - Practicals.mp4
+
+
+
+
+
+
+
+
 
 
 
