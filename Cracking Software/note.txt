@@ -138,6 +138,10 @@ crackme 7 - Cracking by patching eax register values
 crackme 8 - Cracking via Hardware Breakpoints
 crackme 9 - How to Change Serial Key By Patching Memory Directly - (important)
 crackme 10 - Serial Fishing - how to extract serial key - (important)
+crackme 11 - Cracking Software Protection - (important)
+crackme 12 - Cracking software using loaders - (important)
+crackme 13 - Cracking Software's Anti-Debugging Protection - (important)
+crackme 13 - Cracking Software that has a combination of Packing + Anti-Debugging - (super important)
 
 
 

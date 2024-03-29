@@ -13,6 +13,9 @@
 	plugin analytics cac lenh den comment ho tro nguoi dung de doc, de hieu
 
 
+- https://github.com/x64dbg/ScyllaHide
+	plugin anti Anti-Debug
+
 
 
 
