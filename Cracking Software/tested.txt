@@ -1,9 +1,10 @@
 compiler			linker
-- mingw(gcc) 			mcrs 					Debugger
-- microsoft visual c/c++	mcrs					Debugger
-- masm32(8-11)			mcrs					Debugger
-- borland c++			turbo					Debugger
-- borland c++			turbo					Debugger
+- mingw(gcc) 			mcrs 					x64dbg
+- microsoft visual c/c++	mcrs					x64dbg
+- masm32(8-11)			mcrs					x64dbg
+- borland c++			turbo					x64dbg
+- borland c++			turbo					x64dbg
+- borland delphi		turbo					x64dbg
 
 
 
