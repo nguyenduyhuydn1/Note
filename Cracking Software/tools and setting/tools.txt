@@ -16,6 +16,16 @@
 - https://github.com/x64dbg/ScyllaHide
 	plugin anti Anti-Debug
 
+- https://github.com/dnSpy/dnSpy/releases
+	debug .net
+
+
+
+
+
+- https://github.com/mkaring/ConfuserEx
+	- deobfuscate
+
 
 
 

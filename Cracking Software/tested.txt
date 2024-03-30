@@ -3,8 +3,21 @@ compiler			linker
 - microsoft visual c/c++	mcrs					x64dbg
 - masm32(8-11)			mcrs					x64dbg
 - borland c++			turbo					x64dbg
-- borland c++			turbo					x64dbg
 - borland delphi		turbo					x64dbg
+- mcrs visual basic		mcrs					vb-decompiler
+- .net				mcrs					dnspy
+
+- vb.net
+- c#									
 
 
+
+
+
+
+- c, c++, vb6	
+	có thể dùng x64dbg
+- vb6 p-code, vb.net, c# 
+	thì ta cần interpreter
+	tức là t phãi dùng một chương trình compiler để hiểu code của nó
 

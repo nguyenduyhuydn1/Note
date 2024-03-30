@@ -185,3 +185,27 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+- .NET Deobfuscator
+https://github.com/NotPrab/.NET-Deobfuscator
+https://github.com/Patrick979/.NET-Deobfuscator
+	- confuser 1.9
+		+ de4dot
+	- confuserex
+		
+			
+
+
+
