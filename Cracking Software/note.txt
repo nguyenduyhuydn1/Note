@@ -163,6 +163,10 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 - set BP on strings
 - set BP on intermodular calls
 - set BP from call stack
+- call stack xref method
+	coi 048 call stack xref method cps
+	show nơi gọi hàm này
+
 
 - đầu tiền chúng ta tìm bad message 
 	- sau đó ta theo dõi lệnh jump kiểm tra vì sao nó nhảy tới bad message
@@ -178,23 +182,57 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 
 
+
+
+
+- lessons CPS
+017 installing vsd  - (important)
+023 cracking mr bills  - (important)
+029 cracking registry checks  - (super important)
+033 removing nag
+042 deep patching step into calls
+048 call stack xref method - (super important)
+
+
+
+- khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
+	- khi chúng ta đang check bằng cách nhấn f8 thì đôi khi nó sẽ hiện running nhưng k thể thao tác , đó là lý do ta dùng hardware breakpoint
+	- khi ta tìm ở ram memory address 6xxxxx.... mà chuyển tới address hệ thống 8xxx thì nên dừng ở hàm gọi gần nhất và press g để check các đường đi
+	- 6xxxxxx... là thư viện  chúng ta có thể check ở memory map
+	- thống thường là ta tìm ở phần code user 4xxxxx..
+	- https://www.youtube.com/watch?v=D9hQu9fAmCs&list=PLFgDJNQkgnu9NilH9vjHtJC0mW4o7jegn&index=18&pp=gAQBiAQBsAQB
+	
+
+
+- để crack clear (crack toàn bộ mà k phãi từng phần) chúng ta phãi tìm cái register khiến chúng ta có bad message và sau đó tìm các lệnh khiến cho register đó thay đổi
+	023 cracking mr bills  - (important)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - ReadFile window API
 	+ dữ liệu của file sẽ được lưu ở địa tri với biến lpNumberOfBytesRead
 	+ nNumberOfBytesToRead : The maximum number of bytes to be read.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

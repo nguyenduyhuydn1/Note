@@ -15,12 +15,15 @@
 
 - https://github.com/x64dbg/ScyllaHide
 	plugin anti Anti-Debug
+- https://github.com/x64dbg/TitanEngine
+	plugin thay thế cho glueebug engine
+
 
 - https://github.com/dnSpy/dnSpy/releases
 	debug .net
 
 
-
+- resource hacker
 
 
 - https://github.com/mkaring/ConfuserEx

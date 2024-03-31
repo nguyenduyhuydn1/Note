@@ -4,7 +4,7 @@ compiler			linker
 - masm32(8-11)			mcrs					x64dbg
 - borland c++			turbo					x64dbg
 - borland delphi		turbo					x64dbg
-- mcrs visual basic		mcrs					vb-decompiler
+- mcrs visual basic(p-code)	mcrs					vb-decompiler
 - .net				mcrs					dnspy
 
 - vb.net
@@ -21,3 +21,11 @@ compiler			linker
 	thì ta cần interpreter
 	tức là t phãi dùng một chương trình compiler để hiểu code của nó
 
+
+
+
+
+- .net
+	jump = il
+- vb decompiler
+	jump = branchf	
