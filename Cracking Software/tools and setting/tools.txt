@@ -24,7 +24,7 @@
 
 
 - resource hacker
-
+	https://www.angusj.com/resourcehacker/
 
 - https://github.com/mkaring/ConfuserEx
 	- deobfuscate

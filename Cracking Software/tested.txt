@@ -1,15 +1,24 @@
 compiler			linker
-- mingw(gcc) 			mcrs 					x64dbg
-- microsoft visual c/c++	mcrs					x64dbg
-- masm32(8-11)			mcrs					x64dbg
-- borland c++			turbo					x64dbg
-- borland delphi		turbo					x64dbg
-- mcrs visual basic(p-code)	mcrs					vb-decompiler
-- .net				mcrs					dnspy
+- mingw(gcc) 			mcrs 							x64dbg
+- microsoft visual c/c++	mcrs							x64dbg
+- masm32(8-11)			mcrs							x64dbg
+- borland c++			turbo							x64dbg
+- borland delphi		turbo							x64dbg
+- mcrs visual basic(p-code)	mcrs							vb-decompiler
+- .net				mcrs							dnspy
 
 - vb.net
 - c#									
 
+
+
+
+- packer
+	+ UPX
+- protecter
+	+ confuser(1.x)
+	+ confuserEx(1.0.0)
+	+ themida
 
 
 

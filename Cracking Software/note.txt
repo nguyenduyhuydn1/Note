@@ -192,7 +192,7 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 033 removing nag
 042 deep patching step into calls
 048 call stack xref method - (super important)
-
+055 themida and resource hacker - (super important)  	cach dung resource hacker
 
 
 - khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
