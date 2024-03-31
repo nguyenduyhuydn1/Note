@@ -6,7 +6,7 @@ compiler			linker
 - borland delphi		turbo							x64dbg
 - mcrs visual basic(p-code)	mcrs							vb-decompiler
 - .net				mcrs							dnspy
-
+- embarcadero delphi(XE2-XE4)	turbo
 - vb.net
 - c#									
 

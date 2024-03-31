@@ -192,7 +192,13 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 033 removing nag
 042 deep patching step into calls
 048 call stack xref method - (super important)
-055 themida and resource hacker - (super important)  	cach dung resource hacker
+055 themida and resource hacker - (super important)  	cach dung resource hacker	giong deep free
+
+
+
+
+- 1-55 se co bai` hoc dung set breakpoint on execution lo ma tim thang ngu
+	+ (chua chac lo ma tim) set breakpoint on execution : set khi chuong trinh dang running, neu ta set breakpoint thuong thi ta k the step over duoc nhung khi set breakpoint on execution thi co the
 
 
 - khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
