@@ -19,7 +19,7 @@ compiler			linker
 	+ confuser(1.x)
 	+ confuserEx(1.0.0)
 	+ themida
-
+	+ crc
 
 
 

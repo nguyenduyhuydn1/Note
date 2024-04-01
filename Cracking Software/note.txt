@@ -128,6 +128,28 @@ js error ; jump if SF == 1
 
 
 
+
+
+
+method crack
+- set BP on strings
+- set BP on intermodular calls
+- set BP from call stack
+- call stack xref method
+	+ coi 048 call stack xref method cps
+	+ show nơi gọi hàm này
+- waitMessage API method = onion method = coming out of the inner calls layer by layer
+	+ 079 WaitMessage API	CSP
+	+ 082 onion method - chuan hon cai 79
+	+ waitmessage api la phản hồi cho việc chờ người dùng tương tác vơi window, vd: click button
+	+ hình như chỉ sử lí nag screen hoặc cho việc loop check sự kiên ....
+	+ chủ yêu dùng để remove nag screen nơi có chức năng load khiến gây vấn đề khi debug chắc vậy
+	+ chức năng này giúp ta đi từ layer đầu đến layer 2 ... rồi  tới nơi t cân crack, khi ta tới nơi có nhiều code nhất trong func, có nhiều func lồng , nhiều string khả năng là cái ta cần crack
+
+
+
+
+
 - lessons CSL
 crackMe 2 - Cracking Registration File Checks
 crackME 3 - Removing Nag Screens
@@ -144,29 +166,16 @@ crackme 13 - Cracking Software's Anti-Debugging Protection - (important)
 crackme 13 - Cracking Software that has a combination of Packing + Anti-Debugging - (super important)
 
 
-
-
 - user code usually 0040000...
 - operating system code usually 007000..
 - address start with 7 thì chúng ta đang ở operating system memory address
 	VD 743D6879 bắt đầu với 7
 	đây là nơi chúng ta k cần xem
 
-
-
 - tìm good message or bad message sau đó tìm hàm window gần nhất và đặt BP
 - xor eax,eax
 	lệnh này dùng để clear thanh ghi vì ta set eax về 0
 	https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
-
-
-- set BP on strings
-- set BP on intermodular calls
-- set BP from call stack
-- call stack xref method
-	coi 048 call stack xref method cps
-	show nơi gọi hàm này
-
 
 - đầu tiền chúng ta tìm bad message 
 	- sau đó ta theo dõi lệnh jump kiểm tra vì sao nó nhảy tới bad message
@@ -183,9 +192,7 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 
 
-
-
-- lessons CPS
+- lessons CSP
 017 installing vsd  - (important)
 023 cracking mr bills  - (important)
 029 cracking registry checks  - (super important)
@@ -193,13 +200,22 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 042 deep patching step into calls
 048 call stack xref method - (super important)
 055 themida and resource hacker - (super important)  	cach dung resource hacker	giong deep free
-
-
+058 deep patch with call stack - (super important)
+059 installing intelligent shutdown - hoc cach scan tim protecter
+061 call stack deep patching - (super important)
+062 bypass crc - (super important) multiple check
+068 crack registration form  - (super important)
+073 patching setwindowtext api - set BP on intermodular calls
+073 1 cracking registration scheme - x64 crack license
+079 WaitMessage API - what a fucking trick, very very important
+083 remove trial - very very important
+082 onion method - very very important
+084 remove print watermark - resource hacker
+086 tracing rsp memory	- cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
 
 
 - 1-55 se co bai` hoc dung set breakpoint on execution lo ma tim thang ngu
 	+ (chua chac lo ma tim) set breakpoint on execution : set khi chuong trinh dang running, neu ta set breakpoint thuong thi ta k the step over duoc nhung khi set breakpoint on execution thi co the
-
 
 - khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
 	- khi chúng ta đang check bằng cách nhấn f8 thì đôi khi nó sẽ hiện running nhưng k thể thao tác , đó là lý do ta dùng hardware breakpoint
@@ -208,10 +224,45 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 	- thống thường là ta tìm ở phần code user 4xxxxx..
 	- https://www.youtube.com/watch?v=D9hQu9fAmCs&list=PLFgDJNQkgnu9NilH9vjHtJC0mW4o7jegn&index=18&pp=gAQBiAQBsAQB
 	
+- tín hiệu ta đang debug đúng nơi là có nhiều jump và register thường là các thanh ghi tính toán eax ebx,esi .....
+- thường thì đường đi ngắn nhất là sai
+- khi đã crack chúng ta phãi đổi tên file về như củ vì có khả năng sẽ sinh lỗi vì các chức năng cần check name file để sử dụng :V trick lừa mấy ông debugger
+- trick để trả về đúng giá trị là thay cả func đó với lệnh ta cần
+	+ VD:   call 0x11412
+		cmp eax,1
+		je 0x11111
+	+ ta cần eax = 1 và gọi hàm phãi trả về 1, thì ta chỉ cần sử cái hàm đấy  trả về 1 
+		mov eax,1
+		ret
+		+ điều này giúp ta bypass mọi nơi mỗi khi call hàm này để check nó đều trả về 1
+- trick xử lý crack
+	+ nếu so sánh là ở bộ nhớ chúng ta nên vào hàm và xem giá trị nào thay đổi bộ nhớ đấy
+		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
+	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc
+		
 
 
+
+
+
+
+
+mô phỏng
 - để crack clear (crack toàn bộ mà k phãi từng phần) chúng ta phãi tìm cái register khiến chúng ta có bad message và sau đó tìm các lệnh khiến cho register đó thay đổi
 	023 cracking mr bills  - (important)
+- thông thường programer sẽ
+	check format -> check value
+
+
+- mổ ta deep crack
+	+ họ sẽ tạo 1 hoặc nhiều func check và dùng lại nhiều lần
+	+ nếu chúng ta crack surface thì chúng ta chỉ thay đổi giá trị check và dẫn dắt tới good message nhưng nêu chúng ta muốn deep crack chúng ta phãi đi qua phần check của nó và xem, khi chúng ta sửa thành công thì chúng ta sẽ crack toàn bộ mà không cần sửa các chức năng khác
+
+
+
+
+
+or al,1		- 2byte
 
 
 
@@ -220,17 +271,9 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+Burp Suite
+deep freeze
+https://www.softwaretestinghelp.com/remote-access-software/
 
 
 
