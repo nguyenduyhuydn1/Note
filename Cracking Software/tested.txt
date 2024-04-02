@@ -6,7 +6,8 @@ compiler			linker
 - borland delphi		turbo							x64dbg
 - mcrs visual basic(p-code)	mcrs							vb-decompiler
 - .net				mcrs							dnspy
-- embarcadero delphi(XE2-XE4)	turbo
+- embarcadero delphi(XE2-XE4)	turbo							
+- mcrs visual basic(native)	mcrs							x64dbg,vb-decompiler
 - vb.net
 - c#									
 
@@ -19,7 +20,11 @@ compiler			linker
 	+ confuser(1.x)
 	+ confuserEx(1.0.0)
 	+ themida
+		+ 055 themida and resource hacker
 	+ crc
+		+ 062 bypass crc
+	+ skater
+		+ 087 installing and unpacking skate
 
 
 

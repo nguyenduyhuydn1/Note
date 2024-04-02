@@ -134,6 +134,7 @@ js error ; jump if SF == 1
 method crack
 - set BP on strings
 - set BP on intermodular calls
+	+ tìm các fx api window cho dự án
 - set BP from call stack
 - call stack xref method
 	+ coi 048 call stack xref method cps
@@ -212,6 +213,26 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 082 onion method - very very important
 084 remove print watermark - resource hacker
 086 tracing rsp memory	- cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
+089 bypassing anti tamper - trick dll file
+090 registering the program - crack dll file , rat quang trong
+091 removing activation button - hieu cach xoa form trong .net
+098 bypassing server checks - same deep freeze, can ban la no tranh man hinh login
+100 bypass expired trial nag - same 098, cung xoa login chu khong tim cach vao tim key
+102 GetLocalTime API - bypass time 
+108 dnspy call stack and http analyzer method - .net
+110 crack license check - .net
+112 crack login password - .net
+115 unpacking themida protection - crack themida , trick use detect it easy (.Net)
+
+
+
+
+
+
+
+
+
+
 
 
 - 1-55 se co bai` hoc dung set breakpoint on execution lo ma tim thang ngu
@@ -238,7 +259,7 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 - trick xử lý crack
 	+ nếu so sánh là ở bộ nhớ chúng ta nên vào hàm và xem giá trị nào thay đổi bộ nhớ đấy
 		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
-	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc
+	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc, đôi khi chúng ta vẫn nên kiểm tra vì kiểu j đoạn sau có thể check lại thanh ghi
 		
 
 
@@ -259,7 +280,8 @@ mô phỏng
 	+ nếu chúng ta crack surface thì chúng ta chỉ thay đổi giá trị check và dẫn dắt tới good message nhưng nêu chúng ta muốn deep crack chúng ta phãi đi qua phần check của nó và xem, khi chúng ta sửa thành công thì chúng ta sẽ crack toàn bộ mà không cần sửa các chức năng khác
 
 
-
+try it
+https://reverseengineering.stackexchange.com/questions/2796/find-a-string-that-i-entered-in-ollydbg
 
 
 or al,1		- 2byte
