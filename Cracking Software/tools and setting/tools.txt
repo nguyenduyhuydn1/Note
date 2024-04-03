@@ -31,8 +31,19 @@
 
 - hxd
 
+- https://github.com/CodeCracker-Tools/MegaDumper
+	dump dữ liệu từ bộ nhớ đến files
 
 
 - x64dbg -> release -> x32 (x64) -> db
 	- nơi lưu các comment, command, breakpoint cái mà ta đã thêm khi debug xóa hết chúng ta clear các thứ đáy khỏi phần mềm mà ta muốn debug
 
+
+
+
+
+
+
+- build exe .net
+	+ https://learn.microsoft.com/vi-vn/nuget/consume-packages/install-use-packages-dotnet-cli
+	+ 

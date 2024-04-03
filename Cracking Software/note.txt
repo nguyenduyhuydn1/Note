@@ -133,9 +133,18 @@ js error ; jump if SF == 1
 
 method crack
 - set BP on strings
+	+ keyword for search
+		+ LICENSE
+		+ REGISTER
+		+ activate
+		+ check
 - set BP on intermodular calls
-	+ tìm các fx api window cho dự án
+	+ tìm các fx api window trong dự án
 - set BP from call stack
+	+ isDebuggerPresent bypass, attach software is running
+	+ symbols -> name.exe (đưa đến entr point) -> run -> nhấn nhập key và hiện thông báo lỗi -> pause -> call stack -> user module cai hiện thông báo lỗi -> execute till return -> nếu là system module thì ta bấm run to user code || user module thì t check func(end) -> nhấn ok thông báo lỗi -> check func (end)
+		- mục đích của việc này là để bắt đc con trỏ lệnh đang chạy ở đâu
+		- ví dụ khi ta chạy run hiển thị giao diện ứng dụng ---> bấm vào nhập key thì lệnh sẽ chạy tới nhập key ---> khi ta nhập key và ok thì lệnh nó chạy tới thông báo , việc ta thược hiện thao tác till to return nhằm chạy tới nơi mà giao diện đang hiển thị và thực hiện run to user code tới nơi mà người dùng bấm để đi tiếp.
 - call stack xref method
 	+ coi 048 call stack xref method cps
 	+ show nơi gọi hàm này
@@ -222,11 +231,12 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 108 dnspy call stack and http analyzer method - .net
 110 crack license check - .net
 112 crack login password - .net
-115 unpacking themida protection - crack themida , trick use detect it easy (.Net)
-
-
-
-
+115 unpacking themida protection - crack themida , trick use detect it easy (.Net) cần phần mềm để fix dump coi để biết
+118 getlocaltime api - internalmodular
+120 blocking server checks - block server check, cung co the nop ham call server check
+124 setting software to Genuine and Activating program features - .Net
+126 bypass server response method - .Net
+128 isDebuggerPresent bypass install and crack - kha la ao coi ki
 
 
 
@@ -261,6 +271,8 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
 	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc, đôi khi chúng ta vẫn nên kiểm tra vì kiểu j đoạn sau có thể check lại thanh ghi
 		
+
+
 
 
 
