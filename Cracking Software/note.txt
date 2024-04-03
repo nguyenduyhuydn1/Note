@@ -148,13 +148,38 @@ method crack
 - call stack xref method
 	+ coi 048 call stack xref method cps
 	+ show nơi gọi hàm này
-- waitMessage API method = onion method = coming out of the inner calls layer by layer
+- waitMessage API method 
 	+ 079 WaitMessage API	CSP
 	+ 082 onion method - chuan hon cai 79
 	+ waitmessage api la phản hồi cho việc chờ người dùng tương tác vơi window, vd: click button
 	+ hình như chỉ sử lí nag screen hoặc cho việc loop check sự kiên ....
 	+ chủ yêu dùng để remove nag screen nơi có chức năng load khiến gây vấn đề khi debug chắc vậy
 	+ chức năng này giúp ta đi từ layer đầu đến layer 2 ... rồi  tới nơi t cân crack, khi ta tới nơi có nhiều code nhất trong func, có nhiều func lồng , nhiều string khả năng là cái ta cần crack
+- onion method = coming out of the inner calls layer by layer
+	+ func trong func
+	+ chung ta can di ra khoi func hien tại để tới thằng cha
+- baseline trace = to see default path
+	+ thuật ngữ theo theo dõi dấu vết cơ bản 
+	+ trace record
+- message breakpoint method
+	+ xử lý sự kiện click
+	+ vd: khi chúng ta click vào nút ok
+
+
+
+
+luu y, mau chot de crack any software du kho kieu loz j di nua
+Every windows message (events) goes into a message loop that contains two functions:
+TranslateMessage()
+	https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-translatemessage
+DispatchMessage()
+	https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-dispatchmessage
+	+ DispatchMessage() sẽ gửi windowsmessage to the callback func
+	+ sẽ gửi 1 windowmessage đến the callback func
+window message
+	+ https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages
+
+
 
 
 
@@ -222,7 +247,7 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 082 onion method - very very important
 084 remove print watermark - resource hacker
 086 tracing rsp memory	- cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
-089 bypassing anti tamper - trick dll file
+089 bypassing anti tamper - trick dll file, anti tamper khong dung timer
 090 registering the program - crack dll file , rat quang trong
 091 removing activation button - hieu cach xoa form trong .net
 098 bypassing server checks - same deep freeze, can ban la no tranh man hinh login
@@ -237,6 +262,13 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 124 setting software to Genuine and Activating program features - .Net
 126 bypass server response method - .Net
 128 isDebuggerPresent bypass install and crack - kha la ao coi ki
+132 crack license check - bai nay no chi dung call stack va phan tich cung kha on trong cac bai khac
+134 registering username
+135 bypass anti tamper - new method co dung timer, phãi dùng internalmodular dùng settimer api để xử lý
+136 prevent force close - quang trong vcl
+
+
+
 
 
 
