@@ -179,8 +179,7 @@ DispatchMessage()
 window message
 	+ https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages
 
-
-
+virtualalloc is api for allocating memory for writing. virtualprotect is api for changing a memory region to read, wirte or execute
 
 
 
@@ -266,8 +265,8 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 134 registering username
 135 bypass anti tamper - new method co dung timer, phãi dùng internalmodular dùng settimer api để xử lý
 136 prevent force close - quang trong vcl
-
-
+137 pushebp unpacking method - unpack upx method 1
+139 virtualalloc virtualprotect unpacking method - unpacking method method 2
 
 
 

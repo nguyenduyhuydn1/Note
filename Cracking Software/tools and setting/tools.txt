@@ -1,3 +1,6 @@
+password uncompress zip file = crackinglessons.com
+
+
 - https://x64dbg.com/
 	setting -> preferences -> uncheck "TLS callbacks" and uncheck "system breakpoint*"
 
