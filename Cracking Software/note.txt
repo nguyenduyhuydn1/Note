@@ -19,6 +19,11 @@ mov ebp,esp
 ....
 leave
 ret
+- nếu là chương trình 64bit thì ta theo dõi push rbp, push rbx, push rsp
+
+
+
+
 
 
 
@@ -145,6 +150,13 @@ method crack
 	+ symbols -> name.exe (đưa đến entr point) -> run -> nhấn nhập key và hiện thông báo lỗi -> pause -> call stack -> user module cai hiện thông báo lỗi -> execute till return -> nếu là system module thì ta bấm run to user code || user module thì t check func(end) -> nhấn ok thông báo lỗi -> check func (end)
 		- mục đích của việc này là để bắt đc con trỏ lệnh đang chạy ở đâu
 		- ví dụ khi ta chạy run hiển thị giao diện ứng dụng ---> bấm vào nhập key thì lệnh sẽ chạy tới nhập key ---> khi ta nhập key và ok thì lệnh nó chạy tới thông báo , việc ta thược hiện thao tác till to return nhằm chạy tới nơi mà giao diện đang hiển thị và thực hiện run to user code tới nơi mà người dùng bấm để đi tiếp.
+	+ trick
+		+ khi ta dùng call stack mà nhiều hàm chạy thì ta check từng cái
+		+ nếu nó vừa chạy qua getmessage thì sai vì software nó thông báo lỗi khi nhập key nên k có vụ mới chạy nhận được
+		+ nếu hàm thông báo nó lại show trước khi chạy nhánh là sai vì k có nhận sao lại thông báo mà còn chạy chia nhánh
+		+ trước tiên là tick hết các mục rồi chạy lại cho nhanh
+
+
 - call stack xref method
 	+ coi 048 call stack xref method cps
 	+ show nơi gọi hàm này
@@ -164,6 +176,44 @@ method crack
 - message breakpoint method
 	+ xử lý sự kiện click
 	+ vd: khi chúng ta click vào nút ok
+- handles
+	+ 136 prevent force close
+- new method, crack tu viec check software lưu key và đọc key dung api monitor
+	+ theo dõi no đọc key ở file nào, ta tìm cach crack khiến key confirm
+	+ se crack all chuc nang khi dung ki thuat nay
+	+ 164 tracing key file
+	+ 184 GetPrivateProfileString API
+	+ 184 GetPrivateProfileString API
+- data segment analysis
+- lam the nao de phan tich deep debug
+	+ 172 using exceptions to locate patch
+	
+
+
+- các cách protect software
+	+ crackme 11 - Cracking Software Protection - (important) (CSL)
+	+ crackme 11 - Cracking Software Protection - (important) (CSL)
+	
+	+ 062 bypass crc - (super important) multiple check (CSP)
+	+ 089 bypassing anti tamper - trick dll file, anti tamper khong dung timer
+	+ 098 bypassing server checks - same deep freeze, can ban la no tranh man hinh login
+	+ 102 GetLocalTime API - bypass time 
+	+ 128 isDebuggerPresent bypass install and crack - kha la ao coi ki
+	+ 135 bypass anti tamper - new method co dung timer, phãi dùng internalmodular dùng settimer api để xử lý
+	+ 151 process explorer and disabled buttons (CSP) - loadder
+	+ 153 bypass loader protection - ************************* quang trong vcc (CSP)
+	+ 158 bypassing turbo activate - bypass turboactivate.exe toi coi toi eo biet no bypass cho nao
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -213,14 +263,14 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 - đầu tiền chúng ta tìm bad message 
 	- sau đó ta theo dõi lệnh jump kiểm tra vì sao nó nhảy tới bad message
-	- sau đó chúng ta nhìn vào eax xem nó bằng fffffff hay 00000000 
+	- sau đó chúng ta nhìn vào eax xem nó bằng fffffff hay 00000000 ( con dua vao gia tri so sanh)
 		- nếu là 00000000 thì kết quả đang đúng
 		- nếu là ffffffff thì kết quả đang sai và chúng ta cần theo dõi eax phía trên để tìm tại sao nó lại ffffffff từ đó ta có thể sửa đổi giá trị hoặc tìm ra password để nhảy tới good message
 			- khi ta tìm ra 1 register so sanh khiến nó thành ffffffff mà không có sự so sánh chuỗi hay đọc file .... thì ta chỉ cần sửa lệnh tới good message vì nó sẽ không ảnh hưởng đến chức năng
 			- khi ta tìm ra 1 func hay 1 sự so sánh thì ta có thể vào mà check và có thể extract password
 			- nếu đó là func của window api ta cần check document để xem nó trả về cái gì và xử lý tiếp
 
-
+			- 172 using exceptions to locate patch tham khao, phan tich deep debug
 
 
 
@@ -267,7 +317,24 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 136 prevent force close - quang trong vcl
 137 pushebp unpacking method - unpack upx method 1
 139 virtualalloc virtualprotect unpacking method - unpacking method method 2
-
+140 reverse onion layer method - reverse onion method (cach hay)
+143 using api monitor to extract saved login data - tim kiem noi key duoc luu
+145 using call stack to activate - muc dich cua cai note nay la de check va so sanh ket qua :V
+147 unpacking dotfuscator
+149 serial phising using the dnspy debugger - noi chung la de ma cung khong kho :))
+151 process explorer and disabled buttons - ************************* quang trong vcc
+153 bypass loader protection - ************************* quang trong vcc
+154 cracking trial license - ************************* quang trong vcc
+155 patching dll file - ************************* quang trong vcc
+158 bypassing turbo activate - bypass turboactivate.exe
+163 api monitor analysis
+164 tracing key file - crack by fake key method
+168 data segment analysis - tim kiem trong data segment
+172 using exceptions to locate patch -************************* bai nay phan tich chuan
+179 bypass crc check using message breakpoint method
+180 expire trial method
+183 using SetWindowPos api to hide splash screen - hoi mu mo`
+184 GetPrivateProfileString API - ************************* 
 
 
 
@@ -302,6 +369,10 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
 	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc, đôi khi chúng ta vẫn nên kiểm tra vì kiểu j đoạn sau có thể check lại thanh ghi
 		
+
+
+
+
 
 
 

@@ -25,7 +25,8 @@ compiler			linker
 		+ 062 bypass crc
 	+ skater
 		+ 087 installing and unpacking skate
-
+	+ dotfuscator
+		+ 147 unpacking dotfuscator
 
 
 

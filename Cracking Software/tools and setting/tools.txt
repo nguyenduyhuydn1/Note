@@ -19,7 +19,7 @@ password uncompress zip file = crackinglessons.com
 - https://github.com/x64dbg/ScyllaHide
 	plugin anti Anti-Debug
 - https://github.com/x64dbg/TitanEngine
-	plugin thay thế cho glueebug engine
+	dont use glueebug engine
 
 
 - https://github.com/dnSpy/dnSpy/releases
@@ -31,6 +31,9 @@ password uncompress zip file = crackinglessons.com
 
 - https://github.com/mkaring/ConfuserEx
 	- deobfuscate
+
+- http://www.rohitab.com/apimonitor
+	- api monitor
 
 - hxd
 
