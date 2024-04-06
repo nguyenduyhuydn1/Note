@@ -183,12 +183,25 @@ method crack
 	+ se crack all chuc nang khi dung ki thuat nay
 	+ 164 tracing key file
 	+ 184 GetPrivateProfileString API
-	+ 184 GetPrivateProfileString API
+	+ 186 TracingGlobalVariables
 - data segment analysis
 - lam the nao de phan tich deep debug
-	+ 172 using exceptions to locate patch
-	
+	+ 172 using exceptions to locate patch - chuan 
+	+ 186 TracingGlobalVariables
+- diff tracing method
+	+khi trials cho dùng full chức năng nhưng có giới hạn ta có thể dùng method này để crack
+		+ 187 diff tracing and GetSystemTimeAsFileTimeAPI
+		+ đây là api theo dĩu tune hệ thống thay đổi nó và đồng thời crack full thời gian dùng trials
 
+- 189 comment tracing method
+	+ cẩn thận các giá trị global khi crack nhánh
+
+- unpack 
+	+ 137 pushebp unpacking method - unpack upx method 1
+		- dùng trường hợp này khi bạn muốn dump exe file và crack nó
+		- nếu chúng ta cứ cưỡng chế crack mà không dump thì nó sẽ tạo junk code ( code rác ) vì nó chưa unpack
+	+ 139 virtualalloc virtualprotect unpacking method - unpacking method method 2
+		- dùng khi bạn muốn dung cheat engine để crack, nó giúp tìm đc nơi đã unpack và ta có thể đặt bp ở đó để crack, cụ thể là virtualalloc nó sẽ cấp bộ nhớ và thằng virtualprotect sẽ cấp quyền việc dùng  method này giúp ta lấy được nơi unpack và thao tác với nó. không cần dump exe file và có thể dùng cheat engine để crack
 
 - các cách protect software
 	+ crackme 11 - Cracking Software Protection - (important) (CSL)
@@ -203,7 +216,7 @@ method crack
 	+ 151 process explorer and disabled buttons (CSP) - loadder
 	+ 153 bypass loader protection - ************************* quang trong vcc (CSP)
 	+ 158 bypassing turbo activate - bypass turboactivate.exe toi coi toi eo biet no bypass cho nao
-
+	+ 223 bypassing vmprotect kernel level anti debug protection
 
 
 
@@ -287,7 +300,7 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 058 deep patch with call stack - (super important)
 059 installing intelligent shutdown - hoc cach scan tim protecter
 061 call stack deep patching - (super important)
-062 bypass crc - (super important) multiple check
+
 068 crack registration form  - (super important)
 073 patching setwindowtext api - set BP on intermodular calls
 073 1 cracking registration scheme - x64 crack license
@@ -296,12 +309,12 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 082 onion method - very very important
 084 remove print watermark - resource hacker
 086 tracing rsp memory	- cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
-089 bypassing anti tamper - trick dll file, anti tamper khong dung timer
+
 090 registering the program - crack dll file , rat quang trong
 091 removing activation button - hieu cach xoa form trong .net
-098 bypassing server checks - same deep freeze, can ban la no tranh man hinh login
+
 100 bypass expired trial nag - same 098, cung xoa login chu khong tim cach vao tim key
-102 GetLocalTime API - bypass time 
+
 108 dnspy call stack and http analyzer method - .net
 110 crack license check - .net
 112 crack login password - .net
@@ -310,13 +323,12 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 120 blocking server checks - block server check, cung co the nop ham call server check
 124 setting software to Genuine and Activating program features - .Net
 126 bypass server response method - .Net
-128 isDebuggerPresent bypass install and crack - kha la ao coi ki
+
 132 crack license check - bai nay no chi dung call stack va phan tich cung kha on trong cac bai khac
 134 registering username
-135 bypass anti tamper - new method co dung timer, phãi dùng internalmodular dùng settimer api để xử lý
+
 136 prevent force close - quang trong vcl
-137 pushebp unpacking method - unpack upx method 1
-139 virtualalloc virtualprotect unpacking method - unpacking method method 2
+
 140 reverse onion layer method - reverse onion method (cach hay)
 143 using api monitor to extract saved login data - tim kiem noi key duoc luu
 145 using call stack to activate - muc dich cua cai note nay la de check va so sanh ket qua :V
@@ -335,6 +347,18 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 180 expire trial method
 183 using SetWindowPos api to hide splash screen - hoi mu mo`
 184 GetPrivateProfileString API - ************************* 
+186 TracingGlobalVariables - ************************* 
+187 diff tracing and GetSystemTimeAsFileTimeAPI
+189 comment tracing method - cai nay rat la la.
+190 api monitor file tracing and bypassing account login
+194 antidebugger comment trace to crack first check - bypass anti debug  by hide debugg
+196 register tracing to crack 2nd activation check
+197 installing and detecting protector - confuser 1.x and confuserex 1.0
+204 expire trial method - ************************* phãi coi, nêu ax = 0x1 mà không nhảy đúng hướng thì nên xem lại
+205 bypassing anti tamper protection - bypass crc check
+210 Using Reverse Onion Layer Method to remove Limitations on Edit and Save - ********* callstack -> reverse onion, set all bp -> run
+211 removing nag banner ads by child process file - chan phan mem quan cao bang 1 symbol
+
 
 
 
@@ -368,7 +392,14 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 	+ nếu so sánh là ở bộ nhớ chúng ta nên vào hàm và xem giá trị nào thay đổi bộ nhớ đấy
 		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
 	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc, đôi khi chúng ta vẫn nên kiểm tra vì kiểu j đoạn sau có thể check lại thanh ghi
-		
+- đôi khi programer sẽ lừa vì ta luôn theo dõi eax và cách để tránh bị lừa
+	+ 204 expire trial method
+	- thông thường crc check nó sẽ set giá trị ax ve 0x1
+	+ nêu ax = 0x1 mà không nhảy đúng hướng thì chắc chắn là lệnh lừa 
+
+- Cyclic Redundancy Check thường viết tắt là CRC, là thuật ngữ tiếng Anh trong kỹ thuật số, là phương pháp kiểm tra và phát hiện lỗi, được sử dụng trong các mạng số và thiết bị lưu trữ để phát hiện sự thay đổi tình cờ đối với dữ liệu được truyền đi hay lưu trữ.
+	+ khi ta sửa dữ liệu và khiến trigger crc, nó sẽ dẫn ta tới bad message,  thông thường thì đây đc gọi là anti tamper protect
+	+ bypass nó thì cứ jmp nó là dc :V tránh báo lỗi của nó thôi
 
 
 
@@ -376,6 +407,14 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 
 
+
+mô phỏng crack
+	- dung http analysis xem có action online không 
+	- dùng api monitor xem có đọc file key không
+		+ dựa vào việc này ta có thể method search string và tìm tới gần hơn nơi ta crack
+		+ vd: tạo key file rồi khiến file đó confirmed là bypass
+	- nếu các bước trên không có ta sẽ dùng các method khác để crack
+	- nếu có ta theo dõi nhánh, comment, follow eax, global variable, hàm window api để crack thành công
 
 
 
