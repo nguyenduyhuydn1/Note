@@ -11,14 +11,24 @@ https://www.asciitable.com/
 
 msdn
 
+- stack frame
+	push rbp
+	mov rbp,rsp
+
+	////////////////////////function
+	call ptr [address]
+	push rbp
+	mov rbp,rsp
+	...
+	push rsp,rbp	
+	pop rbp
+	ret
 
 
-- cấu trúc 1 function
-push ebp
-mov ebp,esp
-....
-leave
-ret
+	push rsp,rbp
+	pop rbp		// 32 bit se dung 
+	ret
+
 - nếu là chương trình 64bit thì ta theo dõi push rbp, push rbx, push rsp
 
 

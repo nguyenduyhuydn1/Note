@@ -18,6 +18,11 @@ password uncompress zip file = crackinglessons.com
 
 - https://github.com/x64dbg/ScyllaHide
 	plugin anti Anti-Debug
+- https://github.com/A-new/x64dbg_plugin/blob/master/x32/SharpOD%20x64.dp32
+	plugin SharpOD
+	- https://github.com/Vicshann/GhostDbg/blob/master/INFO/SharpOD.txt (xem them)
+
+
 - https://github.com/x64dbg/TitanEngine
 	dont use glueebug engine
 
