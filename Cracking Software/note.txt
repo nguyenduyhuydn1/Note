@@ -3,13 +3,11 @@ https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
 https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
 
-
-
-
-
 https://www.asciitable.com/
-
 msdn
+
+
+
 
 - stack frame
 	push rbp
@@ -24,12 +22,77 @@ msdn
 	pop rbp
 	ret
 
-
 	push rsp,rbp
 	pop rbp		// 32 bit se dung 
 	ret
 
 - nếu là chương trình 64bit thì ta theo dõi push rbp, push rbx, push rsp
+
+- int memcmp ( const void * ptr1, const void * ptr2, size_t num );
+	+ ptr1
+		- Pointer to block of memory
+		- địa chỉ của bộ nhớ
+
+
+- argument for 64bit
+	+ https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
+	func1(int a, int b, int c, int d, int e, int f);
+	// a in RCX, b in RDX, c in R8, d in R9, f then e pushed on stack
+
+
+
+
+- call ds:[<&system>]
+	+ it is common for console application to use system call to clear screen (cls)
+- std:basic_ostream
+	+ input
+- <&exit>
+	+ exit func
+- <&strlen>
+	+ lengh of string
+- <&memcmp>
+	+ https://cplusplus.com/reference/cstring/memcmp/
+
+
+
+
+
+instructions
+- https://www.felixcloutier.com/x86/
+	+ tong hop cac lenh
+- test
+	+ https://reverseengineering.stackexchange.com/questions/15184/what-does-the-test-instruction-do
+- sbb
+	+ https://stackoverflow.com/questions/41031912/x86-sbb-with-same-register-as-first-and-second-operand
+- shr
+	+ https://stackoverflow.com/questions/24477132/what-does-shr-on-asm-mean
+- xorps
+	+ https://stackoverflow.com/questions/35103741/what-is-the-purpose-of-xorps-on-the-same-register
+- CMOVcc (cmova is CMOVcc instruction)
+	+ https://stackoverflow.com/questions/30150274/purpose-of-cmove-instruction-in-x86-assembly
+- cmove
+	+ di chuyen neu bang, dựa vào điều kiện thỏa mãn, same cmovcc, cmova
+	+ https://www.felixcloutier.com/x86/cmovcc
+
+
+
+
+crack password
+- mô phỏng compare method thường dùng 
+	+ so sánh chiều dài của chuỗi nhập
+		+ nó so sánh từng giá trị (loop)
+		+ nó thay đổi signed đến unsigned
+		+ nó dùng hàm so sánh memory
+			+ https://cplusplus.com/reference/cstring/memcmp/
+	+ reversing logic
+		+ chúng ta có thể bypass encryption
+		+ https://www.youtube.com/watch?v=0xKpk-6xT94&list=PLFgDJNQkgnu-20SegoM6PL1xEp5-hdPGd&index=99
+
+
+
+
+
+
 
 
 
@@ -114,21 +177,6 @@ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
 
 
 
-
-
-
-
-
-
-
-instructions
-test eax,eax
-je 0x11111
-	check if eax = 0 then it will nhay
-	tùy vào điều kiện jump mà lênh test có thể thay đổi 
-
-test eax, eax  ; set SF to 1 if eax < 0 (negative)
-js error ; jump if SF == 1
 
 
 
