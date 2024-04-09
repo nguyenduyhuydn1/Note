@@ -39,6 +39,10 @@ password uncompress zip file = crackinglessons.com
 
 - http://www.rohitab.com/apimonitor
 	- api monitor
+	- data access and storage --> local file systems --> file management --> kernel32.dll
+		+ CreateFileA, CreateFileW
+	- System Services --> Windows System Infomation --> Registry --> advapi32.dll
+		+ RegOpenKeyExA, RegOpenKeyExW
 
 - hxd
 
