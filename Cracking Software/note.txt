@@ -9,6 +9,10 @@ msdn
 
 
 
+- anti debug
+	+ https://anti-debug.checkpoint.com/
+
+
 - stack frame
 	push rbp
 	mov rbp,rsp
@@ -25,15 +29,7 @@ msdn
 	push rsp,rbp
 	pop rbp		// 32 bit se dung 
 	ret
-
 - nếu là chương trình 64bit thì ta theo dõi push rbp, push rbx, push rsp
-
-- int memcmp ( const void * ptr1, const void * ptr2, size_t num );
-	+ ptr1
-		- Pointer to block of memory
-		- địa chỉ của bộ nhớ
-
-
 - argument for 64bit
 	+ https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
 	func1(int a, int b, int c, int d, int e, int f);
@@ -52,6 +48,11 @@ msdn
 	+ lengh of string
 - <&memcmp>
 	+ https://cplusplus.com/reference/cstring/memcmp/
+	+ VD:
+		- int memcmp ( const void * ptr1, const void * ptr2, size_t num );
+		- ptr1
+			+ Pointer to block of memory
+			+ địa chỉ của bộ nhớ
 
 
 
@@ -92,29 +93,6 @@ crack password
 
 
 
-
-
-
-
-
-
-
-
-- EAX: the primary accumulator
-	eax thường được dùng để lưu kết quả của func call, operation or so sánh, lệnh jump đôi khi cũng dựa trên kết quả được lưu ở eax
-- EBX: base register
-- ECX: count register
-- EDX: data register
-- ESI,EDI thường được dùng để lưu trữ chuỗi
-	ESI thường được dùng để lưu source string
-	EDI thường được dùng để lưu điểm đến của string
-- EIP là nơi lưu trữ địa chỉ của current instruction 
-- ESP = top of the stack
-  EBP = bottom of the stack
-
-
-
-
 qword 8 bytes
 dword 4 bytes
 word 2 bytes
@@ -139,22 +117,18 @@ Stack – In this memory segment, data may be initialized at run-time. It acts a
 
 
 - flags
-https://viblo.asia/p/toi-da-hoc-assembly-32bit-nhu-the-nao-phan-2-1Je5EmDG5nL
+	+ https://viblo.asia/p/toi-da-hoc-assembly-32bit-nhu-the-nao-phan-2-1Je5EmDG5nL
 - ZF (zero flag)
 	ZF = 1 khi kết quả tính toán = 0 hoặc phép so sánh bằng nhau
 	ZF = 0 khi kết quả tính toán non-zero hoặc phép so sánh khác nhau
-
 - CF (carry flag)
 	https://viblo.asia/p/toi-da-hoc-assembly-32bit-nhu-the-nao-phan-2-1Je5EmDG5nL
-
 - SF (sign flag)
 	nó lấy bit đầu tiên của kết quả để biết được nó âm hay dương
 	SF = 0 mean positive
 	SF = 1 mean negative
-
 - OF (overflow flag)
 	OF = 1 khi kết quả của phép toán có dấu lớn hơn so với kích thước của địa chỉ đích hoặc phép tính sai
-
 - DF (direction flag)
 	this flag controls whether the string address increase or decrease after each string instruction
 	DF = 0 mean EDI address increases after each string operation
@@ -163,32 +137,11 @@ https://viblo.asia/p/toi-da-hoc-assembly-32bit-nhu-the-nao-phan-2-1Je5EmDG5nL
 	STD will set the DF flag (DF = 1)
 	default DF = 0
 
-
-
 - chúng ta nhìn vào CF và OF khi
-	nếu chương trình dùng Unsigned Numbers thì ta tập trung vào CF flag
-	nếu chương trình dùng Signed numbers thì ta tập trung vào OF flag
-
+	+ nếu chương trình dùng Unsigned Numbers thì ta tập trung vào CF flag
+	+ nếu chương trình dùng Signed numbers thì ta tập trung vào OF flag
 - Signed vs Unsigned Numbers
-https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	+ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
 
 
 
@@ -213,8 +166,6 @@ method crack
 		+ nếu nó vừa chạy qua getmessage thì sai vì software nó thông báo lỗi khi nhập key nên k có vụ mới chạy nhận được
 		+ nếu hàm thông báo nó lại show trước khi chạy nhánh là sai vì k có nhận sao lại thông báo mà còn chạy chia nhánh
 		+ trước tiên là tick hết các mục rồi chạy lại cho nhanh
-
-
 - call stack xref method
 	+ coi 048 call stack xref method cps
 	+ show nơi gọi hàm này
@@ -242,24 +193,25 @@ method crack
 	+ 164 tracing key file
 	+ 184 GetPrivateProfileString API
 	+ 186 TracingGlobalVariables
-- data segment analysis
 - lam the nao de phan tich deep debug
 	+ 172 using exceptions to locate patch - chuan 
 	+ 186 TracingGlobalVariables
 - diff tracing method
-	+khi trials cho dùng full chức năng nhưng có giới hạn ta có thể dùng method này để crack
+	+ khi trials cho dùng full chức năng nhưng có giới hạn ta có thể dùng method này để crack
 		+ 187 diff tracing and GetSystemTimeAsFileTimeAPI
 		+ đây là api theo dĩu tune hệ thống thay đổi nó và đồng thời crack full thời gian dùng trials
-
 - 189 comment tracing method
 	+ cẩn thận các giá trị global khi crack nhánh
-
 - unpack 
 	+ 137 pushebp unpacking method - unpack upx method 1
 		- dùng trường hợp này khi bạn muốn dump exe file và crack nó
 		- nếu chúng ta cứ cưỡng chế crack mà không dump thì nó sẽ tạo junk code ( code rác ) vì nó chưa unpack
 	+ 139 virtualalloc virtualprotect unpacking method - unpacking method method 2
 		- dùng khi bạn muốn dung cheat engine để crack, nó giúp tìm đc nơi đã unpack và ta có thể đặt bp ở đó để crack, cụ thể là virtualalloc nó sẽ cấp bộ nhớ và thằng virtualprotect sẽ cấp quyền việc dùng  method này giúp ta lấy được nơi unpack và thao tác với nó. không cần dump exe file và có thể dùng cheat engine để crack
+
+
+
+
 
 - các cách protect software
 	+ crackme 11 - Cracking Software Protection - (important) (CSL)
@@ -280,9 +232,27 @@ method crack
 
 
 
+- api monitor
+	- data access and storage --> local file systems --> file management --> kernel32.dll
+		+ CreateFileA, CreateFileW
+	- System Services --> Windows System Infomation --> Registry --> advapi32.dll
+		+ RegOpenKeyExA, RegOpenKeyExW
 
 
 
+
+
+- .Net
+	+ CSL
+
+	+ CSP
+		- 091 removing activation button - hieu cach xoa form trong .net
+		- 108 dnspy call stack and http analyzer method - .net
+		- 110 crack license check - .net
+		- 112 crack login password - .net
+		- 115 unpacking themida protection - crack themida , trick use detect it easy (.Net) cần phần mềm để fix dump coi để biết
+		- 124 setting software to Genuine and Activating program features - .Net
+		- 126 bypass server response method - .Net
 
 
 
@@ -305,33 +275,31 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
+
+
+
+
+
 - lessons CSL
-crackMe 2 - Cracking Registration File Checks
-crackME 3 - Removing Nag Screens
-crackme 4 - Cracking Trial Period Software - (important)
-crackme 5 - Cracking Auto-Generated Serial Keys	- (important)
-crackme 6 - Removing Nag Screen by TDC
-crackme 7 - Cracking by patching eax register values
-crackme 8 - Cracking via Hardware Breakpoints
-crackme 9 - How to Change Serial Key By Patching Memory Directly - (important)
-crackme 10 - Serial Fishing - how to extract serial key - (important)
-crackme 11 - Cracking Software Protection - (important)
-crackme 12 - Cracking software using loaders - (important)
-crackme 13 - Cracking Software's Anti-Debugging Protection - (important)
-crackme 13 - Cracking Software that has a combination of Packing + Anti-Debugging - (super important)
-
-
+	+ 43 Setting Hardware BPs and doing memory patching
+	- protected
+		+ 52 Introduction to Software Protection
+		+ 57 Intro to loaders
+	- Anti Debugging
+		+ 59 Introduction to Anti Debugging Protection
+	- VBS
+		+ 87 - 97	
+	- .Net
+		+ 107 - 129
 - user code usually 0040000...
 - operating system code usually 007000..
 - address start with 7 thì chúng ta đang ở operating system memory address
 	VD 743D6879 bắt đầu với 7
 	đây là nơi chúng ta k cần xem
-
 - tìm good message or bad message sau đó tìm hàm window gần nhất và đặt BP
 - xor eax,eax
 	lệnh này dùng để clear thanh ghi vì ta set eax về 0
 	https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
-
 - đầu tiền chúng ta tìm bad message 
 	- sau đó ta theo dõi lệnh jump kiểm tra vì sao nó nhảy tới bad message
 	- sau đó chúng ta nhìn vào eax xem nó bằng fffffff hay 00000000 ( con dua vao gia tri so sanh)
@@ -340,7 +308,6 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 			- khi ta tìm ra 1 register so sanh khiến nó thành ffffffff mà không có sự so sánh chuỗi hay đọc file .... thì ta chỉ cần sửa lệnh tới good message vì nó sẽ không ảnh hưởng đến chức năng
 			- khi ta tìm ra 1 func hay 1 sự so sánh thì ta có thể vào mà check và có thể extract password
 			- nếu đó là func của window api ta cần check document để xem nó trả về cái gì và xử lý tiếp
-
 			- 172 using exceptions to locate patch tham khao, phan tich deep debug
 
 
@@ -348,7 +315,16 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 
 
 - lessons CSP
-017 installing vsd  - (important)
+	+ VBS
+		+ 6-7, 
+	+ .Net
+		+ 8-12, 
+	+ C++
+		+ tracing method, remove nag, set BP on execution
+			- đại khái là khi ta f8 gặp lệnh chờ phản hồi nhưng không thể phản hồi đc vì cái đó là network thì ta dùng lệnh này để pass
+			- 17-19
+		+ 
+
 023 cracking mr bills  - (important)
 029 cracking registry checks  - (super important)
 033 removing nag
@@ -358,7 +334,6 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 058 deep patch with call stack - (super important)
 059 installing intelligent shutdown - hoc cach scan tim protecter
 061 call stack deep patching - (super important)
-
 068 crack registration form  - (super important)
 073 patching setwindowtext api - set BP on intermodular calls
 073 1 cracking registration scheme - x64 crack license
@@ -367,26 +342,13 @@ crackme 13 - Cracking Software that has a combination of Packing + Anti-Debuggin
 082 onion method - very very important
 084 remove print watermark - resource hacker
 086 tracing rsp memory	- cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
-
 090 registering the program - crack dll file , rat quang trong
-091 removing activation button - hieu cach xoa form trong .net
-
 100 bypass expired trial nag - same 098, cung xoa login chu khong tim cach vao tim key
-
-108 dnspy call stack and http analyzer method - .net
-110 crack license check - .net
-112 crack login password - .net
-115 unpacking themida protection - crack themida , trick use detect it easy (.Net) cần phần mềm để fix dump coi để biết
 118 getlocaltime api - internalmodular
 120 blocking server checks - block server check, cung co the nop ham call server check
-124 setting software to Genuine and Activating program features - .Net
-126 bypass server response method - .Net
-
 132 crack license check - bai nay no chi dung call stack va phan tich cung kha on trong cac bai khac
 134 registering username
-
 136 prevent force close - quang trong vcl
-
 140 reverse onion layer method - reverse onion method (cach hay)
 143 using api monitor to extract saved login data - tim kiem noi key duoc luu
 145 using call stack to activate - muc dich cua cai note nay la de check va so sanh ket qua :V

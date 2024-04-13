@@ -29,7 +29,7 @@ password uncompress zip file = crackinglessons.com
 
 - https://github.com/dnSpy/dnSpy/releases
 	debug .net
-
+- https://github.com/cheat-engine/cheat-engine
 
 - resource hacker
 	https://www.angusj.com/resourcehacker/
@@ -38,11 +38,7 @@ password uncompress zip file = crackinglessons.com
 	- deobfuscate
 
 - http://www.rohitab.com/apimonitor
-	- api monitor
-	- data access and storage --> local file systems --> file management --> kernel32.dll
-		+ CreateFileA, CreateFileW
-	- System Services --> Windows System Infomation --> Registry --> advapi32.dll
-		+ RegOpenKeyExA, RegOpenKeyExW
+
 
 - hxd
 
@@ -58,6 +54,8 @@ password uncompress zip file = crackinglessons.com
 
 
 
+- tham khao
+	+ https://github.com/petoolse/petools?tab=readme-ov-file#pe-dumper
 
 - build exe .net
 	+ https://learn.microsoft.com/vi-vn/nuget/consume-packages/install-use-packages-dotnet-cli
