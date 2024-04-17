@@ -6,6 +6,13 @@ https://www.tutorialspoint.com/assembly_programming/assembly_logical_instruction
 https://www.asciitable.com/
 msdn
 
+- list plugin IDA
+	+ https://mavlevin.com/2019/05/24/Vulnerability-Research-Tools.html
+	+ https://github.com/onethawt/idaplugins-list
+- tricks and tips reverse engineering
+	+ https://mavlevin.com/2020/05/01/Mav-27s-30-Reverse-Engineering-Tips-26-Tricks.html
+
+
 
 
 
@@ -74,7 +81,8 @@ instructions
 - cmove
 	+ di chuyen neu bang, dựa vào điều kiện thỏa mãn, same cmovcc, cmova
 	+ https://www.felixcloutier.com/x86/cmovcc
-
+- cmp + jnz
+	+ https://stackoverflow.com/questions/45898438/understanding-cmp-instruction
 
 
 
@@ -209,7 +217,8 @@ method crack
 	+ 139 virtualalloc virtualprotect unpacking method - unpacking method method 2
 		- dùng khi bạn muốn dung cheat engine để crack, nó giúp tìm đc nơi đã unpack và ta có thể đặt bp ở đó để crack, cụ thể là virtualalloc nó sẽ cấp bộ nhớ và thằng virtualprotect sẽ cấp quyền việc dùng  method này giúp ta lấy được nơi unpack và thao tác với nó. không cần dump exe file và có thể dùng cheat engine để crack
 
-
+- memory patchers allow you to bypass software protection by letting the packed program unpack itself into memory then we patch the memory (dung cheat engine, python, ...)
+	
 
 
 
@@ -314,16 +323,31 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
+
+- system module thuong la 777.....
+- user module thuong la 444.....
+
 - lessons CSP
 	+ VBS
 		+ 6-7, 
 	+ .Net
 		+ 8-12, 
 	+ C++
-		+ tracing method, remove nag, set BP on execution
-			- đại khái là khi ta f8 gặp lệnh chờ phản hồi nhưng không thể phản hồi đc vì cái đó là network thì ta dùng lệnh này để pass
-			- 17-19
+		+ 17-19
+			+ tracing method, remove nag, set hardware BP on execution
+				- đại khái là khi ta f8 gặp lệnh chờ phản hồi nhưng không thể phản hồi đc vì cái đó là network thì ta dùng lệnh này để pass
+				- hardware BP được dùng khi nó không ở user module
+					+ vì ở module khac ví dụ mfc msdn foundation class library chúng ta set SW BP thi nó éo làm việc
+			
+		+ 28-29
+			+ phần mềm check registered by registry
+		+ 30-33
+			+ call stack, message BP, tracing register, using resource hacker to remove nag, 
 		+ 
+		
+
+
+
 
 023 cracking mr bills  - (important)
 029 cracking registry checks  - (super important)

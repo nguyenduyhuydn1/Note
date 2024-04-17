@@ -1,0 +1,17 @@
+key
+	+ space - switch graph view and linear view
+	+ double click vào fx để đi vào và esc để đi ra
+	+ x - check who call this fx
+	+ n - rename fx
+	+ shift + ins - inline comment
+	+ ; - repeat commnet
+	+ search --> sequence of byte
+		+ search by binary hex ...
+		+ cung co the search text
+	+ search --> immediate value
+		+ search by value
+	+ search + text
+		+ search text
+	+ shift + f12 or view --> open subviews --> strings
+		+ show strings on linear view
+	+ 
