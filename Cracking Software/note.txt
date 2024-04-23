@@ -331,42 +331,52 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 	+ VBS
 		+ 6-7, 
 	+ .Net
-		+ 8-12, 
+		+ 8-12, 106-112, 115-117,
 	+ C++
 		+ 17-19
 			+ tracing method, remove nag, set hardware BP on execution
-				- đại khái là khi ta f8 gặp lệnh chờ phản hồi nhưng không thể phản hồi đc vì cái đó là network thì ta dùng lệnh này để pass
+				- khi ta f8 gặp lệnh chờ phản hồi nhưng không thể phản hồi đc vì cái đó là network thì ta dùng lệnh này để pass
 				- hardware BP được dùng khi nó không ở user module
 					+ vì ở module khac ví dụ mfc msdn foundation class library chúng ta set SW BP thi nó éo làm việc
-			
 		+ 28-29
 			+ phần mềm check registered by registry
 		+ 30-33
 			+ call stack, message BP, tracing register, using resource hacker to remove nag, 
+		+ 46-48
+			+ xref method, call stack, tracing register
+		+ 53-55
+			+ bypass themida protector, search tring in memory, references search, search constant using resource hacker
+		+ 59-62
+			+ call stack, bypass crc ( check multiple times, throw error when we dont use debug),
+		+ 63-65
+			+ call stack, coder chơi mẹo lưu giá trị vào stack để check về sau
+		+ 70-73.2
+			+ setwindowtext api, call stack, search keyword (kieu liscense, registed ... tim ra func check key, roi crack nó)
+		+ 77-79
+			+ waitMessage API
+		+ 80-86
+			+ remove nag, trial, onion method, using resource hacker to remove watermark
+			+ 86 - cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
+		+ 87-91
+			+ ket hop cua skater protector trong .net va anti tamper in c++
+			+ 090 registering the program - crack dll file , rat quang trong
+			+ remove active button
+		+ 92-95
+			+ remove string by hxd, using vbdecompiler and xdbg
+		+ 98
+			+ bypass server checks
+		+ 100-102
+			+ bypass expired trial nag, internalmodular
+		+ 103-105
+			+ unlimited trial, kill nag, call stack
+		+ 113
+			+ onion method, search string
+		+ 118 (.rar)
+			+ etlocaltime api 
 		+ 
-		
 
 
 
-
-023 cracking mr bills  - (important)
-029 cracking registry checks  - (super important)
-033 removing nag
-042 deep patching step into calls
-048 call stack xref method - (super important)
-055 themida and resource hacker - (super important)  	cach dung resource hacker	giong deep free
-058 deep patch with call stack - (super important)
-059 installing intelligent shutdown - hoc cach scan tim protecter
-061 call stack deep patching - (super important)
-068 crack registration form  - (super important)
-073 patching setwindowtext api - set BP on intermodular calls
-073 1 cracking registration scheme - x64 crack license
-079 WaitMessage API - what a fucking trick, very very important
-083 remove trial - very very important
-082 onion method - very very important
-084 remove print watermark - resource hacker
-086 tracing rsp memory	- cẩn thận lỗi khi đặt BP kiểu đặt quá cao khiến k bắt đc popup mình cần
-090 registering the program - crack dll file , rat quang trong
 100 bypass expired trial nag - same 098, cung xoa login chu khong tim cach vao tim key
 118 getlocaltime api - internalmodular
 120 blocking server checks - block server check, cung co the nop ham call server check
@@ -504,12 +514,7 @@ https://www.softwaretestinghelp.com/remote-access-software/
 
 
 
-- .NET Deobfuscator
-https://github.com/NotPrab/.NET-Deobfuscator
-https://github.com/Patrick979/.NET-Deobfuscator
-	- confuser 1.9
-		+ de4dot
-	- confuserex
+
 		
 			
 

@@ -37,6 +37,14 @@ password uncompress zip file = crackinglessons.com
 - https://github.com/mkaring/ConfuserEx
 	- deobfuscate
 
+- .NET Deobfuscator
+	https://github.com/NotPrab/.NET-Deobfuscator
+	https://github.com/Patrick979/.NET-Deobfuscator
+	- confuser 1.9
+		+ de4dot
+	- confuserex
+
+
 - http://www.rohitab.com/apimonitor
 
 
