@@ -267,7 +267,8 @@ method crack
 
 
 
-
+- handles method
+	+ 136 prevent force close
 luu y, mau chot de crack any software du kho kieu loz j di nua
 Every windows message (events) goes into a message loop that contains two functions:
 TranslateMessage()
@@ -331,7 +332,7 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 	+ VBS
 		+ 6-7, 
 	+ .Net
-		+ 8-12, 106-112, 115-117,
+		+ 8-12, 106-112, 115-117, 122-126, 147-150
 	+ C++
 		+ 17-19
 			+ tracing method, remove nag, set hardware BP on execution
@@ -363,7 +364,7 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 			+ remove active button
 		+ 92-95
 			+ remove string by hxd, using vbdecompiler and xdbg
-		+ 98
+		+ 98, 120
 			+ bypass server checks
 		+ 100-102
 			+ bypass expired trial nag, internalmodular
@@ -373,7 +374,14 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 			+ onion method, search string
 		+ 118 (.rar)
 			+ etlocaltime api 
+		+ 128 (IDM)
+			+ onion method nhung phuong thuc la chay toi phan return thay vi tim bang xref (tim dia chi goi ham nay)
+		+ 132-136
+			+ bypass anti tamper by timer mdsn, register name memory address, bắt sự kiện click vào 1 nút.
+		+ 137-144
+			+ top 2 method unpack, fix import khi lỗi miss file dll khi dump file, using api monitor extract login data, onion method.
 		+ 
+			+ loader, 
 
 
 
