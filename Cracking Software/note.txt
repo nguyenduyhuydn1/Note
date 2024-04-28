@@ -1,5 +1,4 @@
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
-https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
 https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
 
@@ -36,7 +35,7 @@ msdn
 	push rsp,rbp
 	pop rbp		// 32 bit se dung 
 	ret
-- nếu là chương trình 64bit thì ta theo dõi push rbp, push rbx, push rsp
+
 - argument for 64bit
 	+ https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
 	func1(int a, int b, int c, int d, int e, int f);
@@ -95,7 +94,6 @@ crack password
 			+ https://cplusplus.com/reference/cstring/memcmp/
 	+ reversing logic
 		+ chúng ta có thể bypass encryption
-		+ https://www.youtube.com/watch?v=0xKpk-6xT94&list=PLFgDJNQkgnu-20SegoM6PL1xEp5-hdPGd&index=99
 
 
 
@@ -169,7 +167,7 @@ method crack
 	+ symbols -> name.exe (đưa đến entr point) -> run -> nhấn nhập key và hiện thông báo lỗi -> pause -> call stack -> user module cai hiện thông báo lỗi -> execute till return -> nếu là system module thì ta bấm run to user code || user module thì t check func(end) -> nhấn ok thông báo lỗi -> check func (end)
 		- mục đích của việc này là để bắt đc con trỏ lệnh đang chạy ở đâu
 		- ví dụ khi ta chạy run hiển thị giao diện ứng dụng ---> bấm vào nhập key thì lệnh sẽ chạy tới nhập key ---> khi ta nhập key và ok thì lệnh nó chạy tới thông báo , việc ta thược hiện thao tác till to return nhằm chạy tới nơi mà giao diện đang hiển thị và thực hiện run to user code tới nơi mà người dùng bấm để đi tiếp.
-	+ trick
+	+
 		+ khi ta dùng call stack mà nhiều hàm chạy thì ta check từng cái
 		+ nếu nó vừa chạy qua getmessage thì sai vì software nó thông báo lỗi khi nhập key nên k có vụ mới chạy nhận được
 		+ nếu hàm thông báo nó lại show trước khi chạy nhánh là sai vì k có nhận sao lại thông báo mà còn chạy chia nhánh
@@ -187,14 +185,17 @@ method crack
 - onion method = coming out of the inner calls layer by layer
 	+ func trong func
 	+ chung ta can di ra khoi func hien tại để tới thằng cha
+		+ 1 là dùng xref để coi những thằng gọi hàm này
+		+ 2 là chạy ra khỏi func, run until return.
 - baseline trace = to see default path
 	+ thuật ngữ theo theo dõi dấu vết cơ bản 
 	+ trace record
 - message breakpoint method
 	+ xử lý sự kiện click
 	+ vd: khi chúng ta click vào nút ok
-- handles
-	+ 136 prevent force close
+
+
+
 - new method, crack tu viec check software lưu key và đọc key dung api monitor
 	+ theo dõi no đọc key ở file nào, ta tìm cach crack khiến key confirm
 	+ se crack all chuc nang khi dung ki thuat nay
@@ -207,7 +208,9 @@ method crack
 - diff tracing method
 	+ khi trials cho dùng full chức năng nhưng có giới hạn ta có thể dùng method này để crack
 		+ 187 diff tracing and GetSystemTimeAsFileTimeAPI
+			+ GetSystemTimeAsFileTimeAPI : api này giúp ta xác định thời gian vì vậy khi SW lấy thời gian nó sẽ dựa trên api này 
 		+ đây là api theo dĩu tune hệ thống thay đổi nó và đồng thời crack full thời gian dùng trials
+		
 - 189 comment tracing method
 	+ cẩn thận các giá trị global khi crack nhánh
 - unpack 
@@ -219,6 +222,21 @@ method crack
 
 - memory patchers allow you to bypass software protection by letting the packed program unpack itself into memory then we patch the memory (dung cheat engine, python, ...)
 	
+- handles method
+	+ 136 prevent force close
+luu y, mau chot de crack any software du kho kieu loz j di nua
+Every windows message (events) goes into a message loop that contains two functions:
+TranslateMessage()
+	https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-translatemessage
+DispatchMessage()
+	https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-dispatchmessage
+	+ DispatchMessage() sẽ gửi windowsmessage to the callback func
+	+ sẽ gửi 1 windowmessage đến the callback func
+window message
+	+ https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages
+
+
+virtualalloc is api for allocating memory for writing. virtualprotect is api for changing a memory region to read, wirte or execute
 
 
 
@@ -248,6 +266,10 @@ method crack
 		+ RegOpenKeyExA, RegOpenKeyExW
 
 
+- last chance exception on .... (C0000005,EXCEPTION_ACCESS_VIOLATION)
+	+ không thể phục hồi sau khi dính lỗi này.
+	+ chương trình bị crash và không biết những gì để làm, đại khái là bạn đã sửa sai giá trị khiến nó bị lỗi.
+		+ điều này chứng tỏ rằng bạn đang patch sai nơi và phãi đi xâu hơn để tìm nơi cần patch
 
 
 
@@ -266,21 +288,6 @@ method crack
 
 
 
-
-- handles method
-	+ 136 prevent force close
-luu y, mau chot de crack any software du kho kieu loz j di nua
-Every windows message (events) goes into a message loop that contains two functions:
-TranslateMessage()
-	https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-translatemessage
-DispatchMessage()
-	https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-dispatchmessage
-	+ DispatchMessage() sẽ gửi windowsmessage to the callback func
-	+ sẽ gửi 1 windowmessage đến the callback func
-window message
-	+ https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages
-
-virtualalloc is api for allocating memory for writing. virtualprotect is api for changing a memory region to read, wirte or execute
 
 
 
@@ -332,7 +339,7 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 	+ VBS
 		+ 6-7, 
 	+ .Net
-		+ 8-12, 106-112, 115-117, 122-126, 147-150
+		+ 8-12, 106-112, 115-117, 122-126, 147-150, 197-201
 	+ C++
 		+ 17-19
 			+ tracing method, remove nag, set hardware BP on execution
@@ -373,38 +380,45 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 		+ 113
 			+ onion method, search string
 		+ 118 (.rar)
-			+ etlocaltime api 
+			+ getlocaltime api, internalmodular
 		+ 128 (IDM)
 			+ onion method nhung phuong thuc la chay toi phan return thay vi tim bang xref (tim dia chi goi ham nay)
 		+ 132-136
 			+ bypass anti tamper by timer mdsn, register name memory address, bắt sự kiện click vào 1 nút.
 		+ 137-144
 			+ top 2 method unpack, fix import khi lỗi miss file dll khi dump file, using api monitor extract login data, onion method.
-		+ 
-			+ loader, 
+
+		+ loader
+			+ 151-155
+				+ enable button, bypass protection
+		
+		+ 156-160
+			+ just activate func, no need bypass all func
+		+ 161-165 (pdf)
+			+ api monitor analysis, tracing key file, crack key file, edit name registed by hxd 
+		+ 166-168
+			+ data segment analysis
+		+ 169-174 (bai nay phan tich chuan)
+			+ call stack,save file tracing record, using exceptions to locate patch, export registry va tái sử dụng, 
+		+ 176-179
+			+ block server, expire trial, onion method, bypass crc check, handle method
+		+ 180-183
+			+ SetWindowPos api, resource hacker
+		+ 184-186 (crack ngược từ keyfile, no check key file đầu tiên nên ta tìm và setup keyfile)
+			+ GetPrivateProfileString API, xử lý key file, cẩn thận global variable,
+		+ 187-189	(GetSystemTimeAsFileTimeAPI)
+			+ crack expired
+		+ 190-193 (goodsync)
+			+ bypass account login, tracing file by api monitor, remove limit.
+		+ 194-196
+			+ crack register, call stack
+		+ 202-207
+			+ crack expired, bypass antitemper, bypass and hieu ve crc check, remove trials nag, crack function
+		+ 208-212 (nitro pdf)
+			+ resource hacker xoa title, call stack ket hop voi onion method, them tien to "~" vao file de ngan chay file, remove nag 
+		
 
 
-
-100 bypass expired trial nag - same 098, cung xoa login chu khong tim cach vao tim key
-118 getlocaltime api - internalmodular
-120 blocking server checks - block server check, cung co the nop ham call server check
-132 crack license check - bai nay no chi dung call stack va phan tich cung kha on trong cac bai khac
-134 registering username
-136 prevent force close - quang trong vcl
-140 reverse onion layer method - reverse onion method (cach hay)
-143 using api monitor to extract saved login data - tim kiem noi key duoc luu
-145 using call stack to activate - muc dich cua cai note nay la de check va so sanh ket qua :V
-147 unpacking dotfuscator
-149 serial phising using the dnspy debugger - noi chung la de ma cung khong kho :))
-151 process explorer and disabled buttons - ************************* quang trong vcc
-153 bypass loader protection - ************************* quang trong vcc
-154 cracking trial license - ************************* quang trong vcc
-155 patching dll file - ************************* quang trong vcc
-158 bypassing turbo activate - bypass turboactivate.exe
-163 api monitor analysis
-164 tracing key file - crack by fake key method
-168 data segment analysis - tim kiem trong data segment
-172 using exceptions to locate patch -************************* bai nay phan tich chuan
 179 bypass crc check using message breakpoint method
 180 expire trial method
 183 using SetWindowPos api to hide splash screen - hoi mu mo`
@@ -429,8 +443,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
-- 1-55 se co bai` hoc dung set breakpoint on execution lo ma tim thang ngu
-	+ (chua chac lo ma tim) set breakpoint on execution : set khi chuong trinh dang running, neu ta set breakpoint thuong thi ta k the step over duoc nhung khi set breakpoint on execution thi co the
 
 - khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
 	- khi chúng ta đang check bằng cách nhấn f8 thì đôi khi nó sẽ hiện running nhưng k thể thao tác , đó là lý do ta dùng hardware breakpoint
@@ -499,14 +511,6 @@ try it
 https://reverseengineering.stackexchange.com/questions/2796/find-a-string-that-i-entered-in-ollydbg
 
 
-or al,1		- 2byte
-
-
-
-
-
-
-
 
 Burp Suite
 deep freeze
@@ -515,16 +519,10 @@ https://www.softwaretestinghelp.com/remote-access-software/
 
 
 
-
 - ReadFile window API
 	+ dữ liệu của file sẽ được lưu ở địa tri với biến lpNumberOfBytesRead
 	+ nNumberOfBytesToRead : The maximum number of bytes to be read.
 
-
-
-
-		
-			
 
 
 
