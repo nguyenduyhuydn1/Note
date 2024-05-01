@@ -41,9 +41,11 @@ password uncompress zip file = crackinglessons.com
 	https://github.com/NotPrab/.NET-Deobfuscator
 	https://github.com/Patrick979/.NET-Deobfuscator
 	- confuser 1.9
+		+ khi dung detect it easy -> confuser(1.9)
 		+ de4dot
-	- confuserex 1.0
-
+	- confuserex 1.0 or 1.6
+		+ khi dung DIE -> confuser(1.x)
+		+ khi user custom thi dung DIE -> confuserEx(1.0.0-c)
 
 - http://www.rohitab.com/apimonitor
 

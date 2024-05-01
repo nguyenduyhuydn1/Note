@@ -2,6 +2,8 @@
 
 https://blog.threat.zone/deobfuscation-technical-analysis-of-confuserex-2/
 https://www.youtube.com/watch?v=y_ma9cLFdmY
+
+confuserex2
 https://twitter.com/vinopaljiri/status/1721335180487524805
 https://www.youtube.com/watch?v=gxVoSD2omYA
 
