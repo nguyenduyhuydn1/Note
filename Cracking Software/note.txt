@@ -517,6 +517,15 @@ deep freeze
 https://www.softwaretestinghelp.com/remote-access-software/
 
 
+regOpenkeyExa
+regOpenkeyExW
+
+createfileA
+createfileW
+
+
+120-
+
 
 
 - ReadFile window API

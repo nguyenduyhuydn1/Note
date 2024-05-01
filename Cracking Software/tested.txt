@@ -10,6 +10,13 @@ compiler			linker
 - mcrs visual basic(native)	mcrs							x64dbg,vb-decompiler
 - vb.net
 - c#									
+- Visual Studio 2017									dnspy
+
+
+
+
+
+
 
 
 

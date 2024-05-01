@@ -1,0 +1,188 @@
+- theo dõi .cctor module đầu tiên, tìm các tín hiệu
+
+https://blog.threat.zone/deobfuscation-technical-analysis-of-confuserex-2/
+https://www.youtube.com/watch?v=y_ma9cLFdmY
+https://twitter.com/vinopaljiri/status/1721335180487524805
+https://www.youtube.com/watch?v=gxVoSD2omYA
+
+
+de4dot file -p crx
+
+
+protection hardening
+type scrambler
+watermarking
+
+
+
+
+Signatures of ConfuserEX Protections and their respective Antidotes
+Packed:
+Signature:
+Lots of arrays in .cctor module
+Antidote:
+Set bpx on gchandle.free, and dump koi.exe
+
+
+
+
+
+
+Anti Tamper:
+Signature:
+An exception occurred when decompiling this method (06000005)
+or,
+empty functions.
+
+EntryPoint VirtualProtect in cctor. Also same with Anti-Dump protection, but, Anti-Dump has visible
+contents within functions.
+Antidote: set bpx on module static. and step over, then dump koi. If there is no koi, then you shoud
+dump the exe. Reopen the exe in dnSpy. You can now see the contents of the functions. To be able to
+run it, NOP the static module and dump the exe. Run this new exe.
+
+
+
+
+
+
+Constants Protection:
+Signature:
+You can see the Form and the functions. But the parameters of the function calls are obfuscated. In
+Name Protection, you can't even see the Form.
+Antidote:
+Use UnconfuserEX Tool: ConfuserExConstantDecryptor
+
+
+
+
+
+
+Control Flow Protection
+Signature:
+cctor static module blank but btn-click-handler has for(;;) and switch-case
+Antidote: ConfuserExSwitchKiller
+
+
+
+
+
+
+Anti Dump Protection:
+Signature:
+EntryPoint VirtualProtect in cctor. Also same with Anti-Tamper protection, but, Anti-Dump has visible
+contents within functions. Also, with Anti-Dump protection, after dumping, the modules are empty,
+except for the PE header.
+Antidote: bpx on module static, don't step over, dump.
+
+
+
+
+
+Reference Proxy Protection:
+Signature:
+Form methods are obfuscated
+Antidote: ConfuserExCallFixer:
+
+
+
+
+
+Resources Protection:
+Signature:
+Open the Resources folder, the resources is empty.
+
+Antidote: bpx on static module. step over. dump the gibberish module. open it in dnspy. in Resources,
+right click, Raw Save resource.
+Goto back to the other program, right click Resources, create file resource, import the saved resource
+above.
+You can nop the static module and dump and the dump should work with the new resource.
+
+
+
+
+
+Name Protection:
+Signature:
+All names/strings everywhere are obfuscated \uxxxx
+In Constants Protection, you can see the Form and the functions. But the parameters of the function calls
+are obfuscated. In Name Protection, you can't even see the Form
+
+Antidote:
+de4ot, then rename Resources/gibberish.resource to Form1.resources and dump.
+
+
+
+
+
+Do nothing for the protections listed below:
+(dnSpy takes care of them automatically)
+Anti IL Dasm
+Anti Debug Protection
+Invalid Metadata Protection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------confuserex
+1. Run the anti-tamper module then dump to file from module panel.
+2. Reopen in dnSpy and NOP the anti-tamper module fragments.
+3. Apply Constants Decryptor.
+4. Apply DupPopPatcher.
+5. Apply Fixer.
+6. Apply SwitchKiller.
+7. Apply Decryptor.
+8. Apply de4dot.
+9. Reopen in dnSpy and NOP 4 static module remnants then dump as final into the installation 
+   folder
+10. To steal the missing module, run the unpacked version in dnSpy and dump the missing
+    module from the module panel - and copy it to the original install folder.
+11. Run the final unpacked file, to trace the logic that checks license and shows nag and
+    NOP them out.
+
+
+
+----- or
+
+
+unpacking-confuserEx-steps.txt - Notepad
+
+[Steps for Unpacking ConfuserEx 1.0]
+*May not apply if the software was protected with a customized version of ConsuferEx.
+
+[Steps 1 to 3, use dnSpy]
+1. Set bpx on gchandle.free, and dump koi.exe,
+2. Set bpx on ctor's 2nd module, and dump koi.exe,
+3. NOP static <module> using by using Edit IL, then remove crackme and save
+
+[From Step 4 onwards, use UnconfuserEx Tools]
+4. ConfuserExConstant Decryptor, then exit
+5. ConfuserExCallFixer, then exit
+6. ConfuserExDupPopPatcher, then exit
+7. ConfuserExFixer, then exit
+8. ConfuserExSwitchKiller, then exit
+
+[Step 9, use Confuser ExMethods Decryptor in the ConfuserEX Unpack folder]
+9. Confuser ExMethods Decryptor, then exit
+
+[Step 10, use de4dot command line tool] 
+10. de4dot, then close command prompt
+
+[Steps 11 to 13 use dnSpy]
+11. Edit Module Entry Point by setting it to Class5, methode (continue with Step 12 below) 
+12. 4 NOP's on static<module> using Edit IL, then remove crackme and save
+
+The test it. If it fails to start. Debug with dnsnv. If you get error:
+
+
+watch 008 intro to hjzn (CSP)
