@@ -2,10 +2,10 @@
 
 https://blog.threat.zone/deobfuscation-technical-analysis-of-confuserex-2/
 https://www.youtube.com/watch?v=y_ma9cLFdmY
-
+https://www.youtube.com/watch?v=gxVoSD2omYA
 confuserex2
 https://twitter.com/vinopaljiri/status/1721335180487524805
-https://www.youtube.com/watch?v=gxVoSD2omYA
+
 
 
 de4dot file -p crx
@@ -184,7 +184,12 @@ unpacking-confuserEx-steps.txt - Notepad
 11. Edit Module Entry Point by setting it to Class5, methode (continue with Step 12 below) 
 12. 4 NOP's on static<module> using Edit IL, then remove crackme and save
 
-The test it. If it fails to start. Debug with dnsnv. If you get error:
+The test it. If it fails to start. Debug with dnSpy. If you get error:
+"missing manifest resource exception", then do Step 13 below. The error message will also tell you that some Form is missing, eg, Form1.resources is missing.
+
+[Step 13, use dnSpy]
+13. Open Resources folder and rename the gibberish text.resources to Form1.resources or whatever the name of the missing Form mentioned in the error message. Then, remove crackme and save.
+Test.
 
 
 watch 008 intro to hjzn (CSP)
