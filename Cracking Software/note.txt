@@ -236,7 +236,12 @@ window message
 	+ https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages
 
 
+
+
 virtualalloc is api for allocating memory for writing. virtualprotect is api for changing a memory region to read, wirte or execute
+- khi set BP virtualaloc khong lam viec thi nen dung cach nay
+	+ https://www.youtube.com/watch?v=Tc8Wl37uwYc
+
 
 
 

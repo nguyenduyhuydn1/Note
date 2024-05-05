@@ -16,8 +16,6 @@ type scrambler
 watermarking
 
 
-
-
 Signatures of ConfuserEX Protections and their respective Antidotes
 Packed:
 Signature:
@@ -193,3 +191,4 @@ Test.
 
 
 watch 008 intro to hjzn (CSP)
+watch 120 (CSL)
