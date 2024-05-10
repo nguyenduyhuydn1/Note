@@ -345,6 +345,7 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 		+ 6-7, 
 	+ .Net
 		+ 8-12, 106-112, 115-117, 122-126, 147-150, 197-201
+		+ https://en.wikipedia.org/wiki/List_of_CIL_instructions
 	+ C++
 		+ 17-19
 			+ tracing method, remove nag, set hardware BP on execution

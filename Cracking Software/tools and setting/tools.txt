@@ -29,6 +29,9 @@ password uncompress zip file = crackinglessons.com
 
 - https://github.com/dnSpy/dnSpy/releases
 	debug .net
+- https://github.com/icsharpcode/ILSpy/releases
+	- ILSpy is the open-source .NET assembly browser and decompiler.
+
 - https://github.com/cheat-engine/cheat-engine
 
 - resource hacker

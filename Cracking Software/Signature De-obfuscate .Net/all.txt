@@ -16,6 +16,13 @@ type scrambler
 watermarking
 
 
+
+
+
+
+
+
+
 Signatures of ConfuserEX Protections and their respective Antidotes
 Packed:
 Signature:
