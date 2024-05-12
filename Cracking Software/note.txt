@@ -1,6 +1,8 @@
 
 - hack game huong dan
 	+ https://gamehacking.academy/pages/3/04/
+- reverser engineering dll thread
+	+ https://www.codereversing.com/archives/653#respond
 
 
 
@@ -14,8 +16,18 @@ msdn
 - list plugin IDA
 	+ https://mavlevin.com/2019/05/24/Vulnerability-Research-Tools.html
 	+ https://github.com/onethawt/idaplugins-list
+
 - tricks and tips reverse engineering
 	+ https://mavlevin.com/2020/05/01/Mav-27s-30-Reverse-Engineering-Tips-26-Tricks.html
+	+ best way set BP
+		+ https://www.youtube.com/watch?v=Tc8Wl37uwYc&t=1078s
+	+ đôi khi ta sẽ gặp các hex đặc biệt và éo biết nó là gì thì nó có thể là nơi gọi module vv.... nên xem video
+		+ kiểu xác định func được gọi
+		+ xác định hàm gì được gọi, tính toán làm sao để biết , vv
+		+ https://www.youtube.com/watch?v=zb_JPYTvdAs&list=PLrl8Ub_E3P_UNRuZ5M2_rjjfzjNiLI4Hu&index=7
+	+ Find Encryption
+		+ https://www.youtube.com/watch?v=rZ6hJcJUN88&t=446s
+
 
 
 
@@ -593,3 +605,8 @@ createfileW
 	+ https://www.youtube.com/watch?v=DGX7oZvdmT0
 		+ chỉ giải thích , dùng cách trên khỏe
 
+
+
+--------------------------------------------- script python for ida
+- Convert large amount of code to data in IDA
+	+ https://stackoverflow.com/questions/14492911/convert-large-amount-of-code-to-data-in-ida

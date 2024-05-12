@@ -18,6 +18,8 @@ key
 	+ intermodular
 		+ https://www.youtube.com/watch?v=RdTOlk7L7Ak&list=PLoAs2nnMPJTLeqP3aQl1rSkjf-o5wkxwf&index=25
 		+ kiếm thàng cha gọi hàm trong .data
+	+ 
+
 
 0x803b58
 
@@ -43,3 +45,5 @@ startTrial
 
 
 installUpdate	SdAppServices_49
+
+C:\Program Files (x86)\Stardock\Fences\SdAppServices.dll	0000000073270000	000000000011A000

@@ -45,6 +45,9 @@ password uncompress zip file = crackinglessons.com
 - https://github.com/mkaring/ConfuserEx
 	- deobfuscate
 
+- plugin ghidra
+	+ https://github.com/TorgoTorgo/ghidra-findcrypt
+
 
 
 - .NET Deobfuscator
