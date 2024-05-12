@@ -1,3 +1,9 @@
+
+- hack game huong dan
+	+ https://gamehacking.academy/pages/3/04/
+
+
+
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
 https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
@@ -12,6 +18,9 @@ msdn
 	+ https://mavlevin.com/2020/05/01/Mav-27s-30-Reverse-Engineering-Tips-26-Tricks.html
 
 
+
+- cach thuc reverser engineering
+	+ https://0xdf.gitlab.io/
 
 
 
@@ -35,6 +44,16 @@ msdn
 	push rsp,rbp
 	pop rbp		// 32 bit se dung 
 	ret
+
+- detect main func
+	start entrypoint va di xuong, co dang nhu sau
+	mov r8, rdi
+	mov rdx, rbx
+	mov ecx, dword ptr ds:[rax]
+	call ......
+
+
+
 
 - argument for 64bit
 	+ https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
@@ -94,6 +113,19 @@ crack password
 			+ https://cplusplus.com/reference/cstring/memcmp/
 	+ reversing logic
 		+ chúng ta có thể bypass encryption
+
+
+
+
+- mô tả cách tôi tìm ra nơi crack fences5
+	+ đầu tiền tôi đặt các bp vào các class để tìm ra nơi nó check key
+	+ tôi tìm thấy nó import A.dll file và gửi dữ liệu chạy hàm ở A.dll
+	+ tìm ra parameter chạy A.dll file
+	+ run and debug with x32dbg
+	+ win game ez
+
+
+
 
 
 
@@ -197,6 +229,8 @@ method crack
 
 
 - new method, crack tu viec check software lưu key và đọc key dung api monitor
+	+ https://medium.com/techzap/dll-hijacking-part-1-basics-b6dfb8260cf1
+		+ trick dung monitor or procmon
 	+ theo dõi no đọc key ở file nào, ta tìm cach crack khiến key confirm
 	+ se crack all chuc nang khi dung ki thuat nay
 	+ 164 tracing key file
@@ -540,4 +574,22 @@ createfileW
 
 
 
+
+
+
+
+------------------------------------------- DLL file
+- how to pass parameters to function in dll using rundll32.exe
+	+ https://stmxcsr.com/micro/rundll-parse-args.html
+- trick
+	+ https://blog.securitybreak.io/reverse-engineering-tip-analyzing-a-dll-in-x64dbg-b3005d516049
+
+
+
+
+-------------------------------------------- fix error
+- lỗi ida và x64dbg không giống address
+	+ https://reverseengineering.stackexchange.com/questions/22494/how-to-use-memory-address-information-from-idafree-to-set-a-breakpoint-in-x32dbg
+	+ https://www.youtube.com/watch?v=DGX7oZvdmT0
+		+ chỉ giải thích , dùng cách trên khỏe
 

@@ -14,4 +14,32 @@ key
 		+ search text
 	+ shift + f12 or view --> open subviews --> strings
 		+ show strings on linear view
-	+ 
+	+ view -> open subview -> generate pseudocode
+	+ intermodular
+		+ https://www.youtube.com/watch?v=RdTOlk7L7Ak&list=PLoAs2nnMPJTLeqP3aQl1rSkjf-o5wkxwf&index=25
+		+ kiếm thàng cha gọi hàm trong .data
+
+0x803b58
+
+trial
+	SdAppServices_16	setCacheValue	
+			
+	SdAppServices_32	SetStoredTrialEmail
+
+	SdAppServices_19	startTrial				khu khong network no bao loi
+				
+	
+setCacheValue
+setStoredTrialemail
+startTrial
+
+screen 2
+SdAppServices_34	GetTrialRequestToken		
+
+screen 3
+setCacheValue
+setStoredTrialemail
+startTrial
+
+
+installUpdate	SdAppServices_49

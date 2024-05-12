@@ -8,6 +8,9 @@ password uncompress zip file = crackinglessons.com
 							start "00000000"
 							end   "ffffffff"
 							this mean that u can ignore all these errors
+	+ https://reverseengineeringtips.blogspot.com/2015/01/an-introduction-to-x64dbg.html
+		+ cac chuc nang cua x64dbg
+
 
 
 - https://github.com/horsicq/Detect-It-Easy
@@ -25,7 +28,9 @@ password uncompress zip file = crackinglessons.com
 
 - https://github.com/x64dbg/TitanEngine
 	dont use glueebug engine
-
+- https://www.winitor.com/
+	+ pestudio
+		+ phân tích file
 
 - https://github.com/dnSpy/dnSpy/releases
 	debug .net
@@ -39,6 +44,8 @@ password uncompress zip file = crackinglessons.com
 
 - https://github.com/mkaring/ConfuserEx
 	- deobfuscate
+
+
 
 - .NET Deobfuscator
 	https://github.com/NotPrab/.NET-Deobfuscator
@@ -61,6 +68,11 @@ password uncompress zip file = crackinglessons.com
 
 - x64dbg -> release -> x32 (x64) -> db
 	- nơi lưu các comment, command, breakpoint cái mà ta đã thêm khi debug xóa hết chúng ta clear các thứ đáy khỏi phần mềm mà ta muốn debug
+
+
+- tong hop tool crack
+	+ https://stackoverflow.com/questions/36478475/how-to-reverse-engineer-software-easily
+
 
 
 
