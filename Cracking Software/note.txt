@@ -1,13 +1,17 @@
-- hack game huong dan
-	+ https://gamehacking.academy/pages/3/04/
-
 
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
 
-
 https://www.asciitable.com/
 msdn = Microsoft Developer Network
+
+- blog cach thuc reverser engineering
+	+ https://0xdf.gitlab.io/
+	+ reverser engineering dll thread
+		+ https://www.codereversing.com/archives/653#respond
+
+- anti debug
+	+ https://anti-debug.checkpoint.com/
 
 
 - list plugin IDA
@@ -30,22 +34,46 @@ msdn = Microsoft Developer Network
 	+ find string
 		+ https://reverseengineering.stackexchange.com/questions/2796/find-a-string-that-i-entered-in-ollydbg
 
+- beginner reverse engineering
+	+ hieu ve offset cach local bien declare vv, basic ida
+		+ https://www.youtube.com/watch?v=dBGwa13vBXs
+		+ https://www.youtube.com/watch?v=ks6csfpTRCE&list=PL7YjNn4bTOJqwhUxB6ZZguNkHDy1s2fpn
+	+ https://www.youtube.com/watch?v=vxNzPvpiICk
+		+ shortcut ida
 
-- blog cach thuc reverser engineering
-	+ https://0xdf.gitlab.io/
-	+ reverser engineering dll thread
-		+ https://www.codereversing.com/archives/653#respond
-
-
-- anti debug
-	+ https://anti-debug.checkpoint.com/
-
-
+- hack game huong dan
+	+ https://gamehacking.academy/pages/3/04/
 
 
+------------------------------------------- DLL file
+- how to pass parameters to function in dll using rundll32.exe
+	+ https://stmxcsr.com/micro/rundll-parse-args.html
+- trick
+	+ https://blog.securitybreak.io/reverse-engineering-tip-analyzing-a-dll-in-x64dbg-b3005d516049
 
 
+-------------------------------------------- fix error
+- lỗi ida và x64dbg không giống address
+	+ https://reverseengineering.stackexchange.com/questions/22494/how-to-use-memory-address-information-from-idafree-to-set-a-breakpoint-in-x32dbg
+	+ https://www.youtube.com/watch?v=DGX7oZvdmT0
+		+ chỉ giải thích , dùng cách trên khỏe
 
+
+--------------------------------------------- script python for ida
+- Convert large amount of code to data in IDA
+	+ https://stackoverflow.com/questions/14492911/convert-large-amount-of-code-to-data-in-ida
+
+
+- Reverse Engineering Network Protocols
+	+ WINHTTP.DLL
+		+ http request
+	+ ws2_32.dll
+		+ socket
+	+ wsock32
+		+ socket , older version.
+		+ recv func
+
+	+ https://www.youtube.com/watch?v=vxNzPvpiICk
 
 
 
@@ -64,15 +92,16 @@ msdn = Microsoft Developer Network
 	ret
 
 	push rsp,rbp
-	pop rbp		// 32 bit se dung 
+	pop rbp		// 32 bit se dung ebp
 	ret
 
-- detect main func
+- detect main func, exe c++
 	start entrypoint va di xuong, co dang nhu sau
 	mov r8, rdi
 	mov rdx, rbx
 	mov ecx, dword ptr ds:[rax]
 	call ......
+		+ https://www.youtube.com/watch?v=tWSa1L5L394
 
 - argument for 64bit
 	+ https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
@@ -125,7 +154,7 @@ instructions
 	+ https://stackoverflow.com/questions/45898438/understanding-cmp-instruction
 
 
-
+	
 
 
 crack password
@@ -586,24 +615,3 @@ createfileW
 
 
 
-
-------------------------------------------- DLL file
-- how to pass parameters to function in dll using rundll32.exe
-	+ https://stmxcsr.com/micro/rundll-parse-args.html
-- trick
-	+ https://blog.securitybreak.io/reverse-engineering-tip-analyzing-a-dll-in-x64dbg-b3005d516049
-
-
-
-
--------------------------------------------- fix error
-- lỗi ida và x64dbg không giống address
-	+ https://reverseengineering.stackexchange.com/questions/22494/how-to-use-memory-address-information-from-idafree-to-set-a-breakpoint-in-x32dbg
-	+ https://www.youtube.com/watch?v=DGX7oZvdmT0
-		+ chỉ giải thích , dùng cách trên khỏe
-
-
-
---------------------------------------------- script python for ida
-- Convert large amount of code to data in IDA
-	+ https://stackoverflow.com/questions/14492911/convert-large-amount-of-code-to-data-in-ida
