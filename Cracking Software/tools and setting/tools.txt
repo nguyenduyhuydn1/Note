@@ -48,6 +48,10 @@ password uncompress zip file = crackinglessons.com
 - plugin ghidra
 	+ https://github.com/TorgoTorgo/ghidra-findcrypt
 
+- ida
+	+ https://www.youtube.com/watch?v=pfBA6y4VLwM
+	+ findcrypt2 - 3
+	+ 
 
 
 - .NET Deobfuscator

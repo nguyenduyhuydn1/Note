@@ -1,21 +1,19 @@
-
 - hack game huong dan
 	+ https://gamehacking.academy/pages/3/04/
-- reverser engineering dll thread
-	+ https://www.codereversing.com/archives/653#respond
-
 
 
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
-https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
+
 
 https://www.asciitable.com/
-msdn
+msdn = Microsoft Developer Network
+
 
 - list plugin IDA
 	+ https://mavlevin.com/2019/05/24/Vulnerability-Research-Tools.html
 	+ https://github.com/onethawt/idaplugins-list
+
 
 - tricks and tips reverse engineering
 	+ https://mavlevin.com/2020/05/01/Mav-27s-30-Reverse-Engineering-Tips-26-Tricks.html
@@ -27,17 +25,29 @@ msdn
 		+ https://www.youtube.com/watch?v=zb_JPYTvdAs&list=PLrl8Ub_E3P_UNRuZ5M2_rjjfzjNiLI4Hu&index=7
 	+ Find Encryption
 		+ https://www.youtube.com/watch?v=rZ6hJcJUN88&t=446s
+	+ reverser engineering decryption
+		+ https://www.youtube.com/watch?v=l2P5CMH9TE0
+	+ find string
+		+ https://reverseengineering.stackexchange.com/questions/2796/find-a-string-that-i-entered-in-ollydbg
 
 
-
-
-- cach thuc reverser engineering
+- blog cach thuc reverser engineering
 	+ https://0xdf.gitlab.io/
-
+	+ reverser engineering dll thread
+		+ https://www.codereversing.com/archives/653#respond
 
 
 - anti debug
 	+ https://anti-debug.checkpoint.com/
+
+
+
+
+
+
+
+
+
 
 
 - stack frame
@@ -64,9 +74,6 @@ msdn
 	mov ecx, dword ptr ds:[rax]
 	call ......
 
-
-
-
 - argument for 64bit
 	+ https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170
 	func1(int a, int b, int c, int d, int e, int f);
@@ -90,6 +97,9 @@ msdn
 		- ptr1
 			+ Pointer to block of memory
 			+ địa chỉ của bộ nhớ
+- ReadFile window API
+	+ dữ liệu của file sẽ được lưu ở địa tri với biến lpNumberOfBytesRead
+	+ nNumberOfBytesToRead : The maximum number of bytes to be read.
 
 
 
@@ -116,6 +126,8 @@ instructions
 
 
 
+
+
 crack password
 - mô phỏng compare method thường dùng 
 	+ so sánh chiều dài của chuỗi nhập
@@ -127,14 +139,87 @@ crack password
 		+ chúng ta có thể bypass encryption
 
 
-
-
 - mô tả cách tôi tìm ra nơi crack fences5
 	+ đầu tiền tôi đặt các bp vào các class để tìm ra nơi nó check key
 	+ tôi tìm thấy nó import A.dll file và gửi dữ liệu chạy hàm ở A.dll
 	+ tìm ra parameter chạy A.dll file
 	+ run and debug with x32dbg
 	+ win game ez
+
+
+- khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
+	- khi chúng ta đang check bằng cách nhấn f8 thì đôi khi nó sẽ hiện running nhưng k thể thao tác , đó là lý do ta dùng hardware breakpoint
+	- khi ta tìm ở ram memory address 6xxxxx.... mà chuyển tới address hệ thống 8xxx thì nên dừng ở hàm gọi gần nhất và press g để check các đường đi
+	- 6xxxxxx... là thư viện  chúng ta có thể check ở memory map
+	- thống thường là ta tìm ở phần code user 4xxxxx..
+	- https://www.youtube.com/watch?v=D9hQu9fAmCs&list=PLFgDJNQkgnu9NilH9vjHtJC0mW4o7jegn&index=18&pp=gAQBiAQBsAQB
+	
+- tín hiệu ta đang debug đúng nơi là có nhiều jump và register thường là các thanh ghi tính toán eax ebx,esi .....
+- thường thì đường đi ngắn nhất là sai
+- khi đã crack chúng ta phãi đổi tên file về như củ vì có khả năng sẽ sinh lỗi vì các chức năng cần check name file để sử dụng :V trick lừa mấy ông debugger
+- trick để trả về đúng giá trị là thay cả func đó với lệnh ta cần
+	+ VD:   call 0x11412
+		cmp eax,1
+		je 0x11111
+	+ ta cần eax = 1 và gọi hàm phãi trả về 1, thì ta chỉ cần sử cái hàm đấy  trả về 1 
+		mov eax,1
+		ret
+		+ điều này giúp ta bypass mọi nơi mỗi khi call hàm này để check nó đều trả về 1
+- trick xử lý crack
+	+ nếu so sánh là ở bộ nhớ chúng ta nên vào hàm và xem giá trị nào thay đổi bộ nhớ đấy
+		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
+	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc, đôi khi chúng ta vẫn nên kiểm tra vì kiểu j đoạn sau có thể check lại thanh ghi
+- đôi khi programer sẽ lừa vì ta luôn theo dõi eax và cách để tránh bị lừa
+	+ 204 expire trial method
+	- thông thường crc check nó sẽ set giá trị ax ve 0x1
+	+ nêu ax = 0x1 mà không nhảy đúng hướng thì chắc chắn là lệnh lừa 
+
+- Cyclic Redundancy Check thường viết tắt là CRC, là thuật ngữ tiếng Anh trong kỹ thuật số, là phương pháp kiểm tra và phát hiện lỗi, được sử dụng trong các mạng số và thiết bị lưu trữ để phát hiện sự thay đổi tình cờ đối với dữ liệu được truyền đi hay lưu trữ.
+	+ khi ta sửa dữ liệu và khiến trigger crc, nó sẽ dẫn ta tới bad message,  thông thường thì đây đc gọi là anti tamper protect
+	+ bypass nó thì cứ jmp nó là dc :V tránh báo lỗi của nó thôi
+
+
+mô phỏng crack
+	- dung http analysis xem có action online không 
+	- dùng api monitor xem có đọc file key không
+		+ dựa vào việc này ta có thể method search string và tìm tới gần hơn nơi ta crack
+		+ vd: tạo key file rồi khiến file đó confirmed là bypass
+	- nếu các bước trên không có ta sẽ dùng các method khác để crack
+	- nếu có ta theo dõi nhánh, comment, follow eax, global variable, hàm window api để crack thành công
+
+
+mô phỏng
+- để crack clear (crack toàn bộ mà k phãi từng phần) chúng ta phãi tìm cái register khiến chúng ta có bad message và sau đó tìm các lệnh khiến cho register đó thay đổi
+	023 cracking mr bills  - (important)
+- thông thường programer sẽ
+	check format -> check value
+
+
+- mổ ta deep crack
+	+ họ sẽ tạo 1 hoặc nhiều func check và dùng lại nhiều lần
+	+ nếu chúng ta crack surface thì chúng ta chỉ thay đổi giá trị check và dẫn dắt tới good message nhưng nêu chúng ta muốn deep crack chúng ta phãi đi qua phần check của nó và xem, khi chúng ta sửa thành công thì chúng ta sẽ crack toàn bộ mà không cần sửa các chức năng khác
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -148,9 +233,6 @@ dword 4 bytes
 word 2 bytes
 
 
-
-
-
 - mov dword ptr ds:["memory address"], eax
 ds = data segment
 ss = stack segment	(no goi o phan stack)
@@ -160,9 +242,6 @@ Code – The segment where actual code is stored and is represented by the .text
 Data – Represented by the .data and .bss sections, it is used to declare global and local variables. It remains static throughout the program.
 
 Stack – In this memory segment, data may be initialized at run-time. It acts as temporary storage and follows the Last In First Out protocol, which means that elements are only added or removed from the top.
-
-
-
 
 
 
@@ -192,8 +271,6 @@ Stack – In this memory segment, data may be initialized at run-time. It acts a
 	+ nếu chương trình dùng Signed numbers thì ta tập trung vào OF flag
 - Signed vs Unsigned Numbers
 	+ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
-
-
 
 
 
@@ -237,7 +314,6 @@ method crack
 - message breakpoint method
 	+ xử lý sự kiện click
 	+ vd: khi chúng ta click vào nút ok
-
 
 
 - new method, crack tu viec check software lưu key và đọc key dung api monitor
@@ -382,10 +458,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
-
-- system module thuong la 777.....
-- user module thuong la 444.....
-
 - lessons CSP
 	+ VBS
 		+ 6-7, 
@@ -471,21 +543,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 		
 
 
-179 bypass crc check using message breakpoint method
-180 expire trial method
-183 using SetWindowPos api to hide splash screen - hoi mu mo`
-184 GetPrivateProfileString API - ************************* 
-186 TracingGlobalVariables - ************************* 
-187 diff tracing and GetSystemTimeAsFileTimeAPI
-189 comment tracing method - cai nay rat la la.
-190 api monitor file tracing and bypassing account login
-194 antidebugger comment trace to crack first check - bypass anti debug  by hide debugg
-196 register tracing to crack 2nd activation check
-197 installing and detecting protector - confuser 1.x and confuserex 1.0
-204 expire trial method - ************************* phãi coi, nêu ax = 0x1 mà không nhảy đúng hướng thì nên xem lại
-205 bypassing anti tamper protection - bypass crc check
-210 Using Reverse Onion Layer Method to remove Limitations on Edit and Save - ********* callstack -> reverse onion, set all bp -> run
-211 removing nag banner ads by child process file - chan phan mem quan cao bang 1 symbol
 
 
 
@@ -496,36 +553,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
-- khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
-	- khi chúng ta đang check bằng cách nhấn f8 thì đôi khi nó sẽ hiện running nhưng k thể thao tác , đó là lý do ta dùng hardware breakpoint
-	- khi ta tìm ở ram memory address 6xxxxx.... mà chuyển tới address hệ thống 8xxx thì nên dừng ở hàm gọi gần nhất và press g để check các đường đi
-	- 6xxxxxx... là thư viện  chúng ta có thể check ở memory map
-	- thống thường là ta tìm ở phần code user 4xxxxx..
-	- https://www.youtube.com/watch?v=D9hQu9fAmCs&list=PLFgDJNQkgnu9NilH9vjHtJC0mW4o7jegn&index=18&pp=gAQBiAQBsAQB
-	
-- tín hiệu ta đang debug đúng nơi là có nhiều jump và register thường là các thanh ghi tính toán eax ebx,esi .....
-- thường thì đường đi ngắn nhất là sai
-- khi đã crack chúng ta phãi đổi tên file về như củ vì có khả năng sẽ sinh lỗi vì các chức năng cần check name file để sử dụng :V trick lừa mấy ông debugger
-- trick để trả về đúng giá trị là thay cả func đó với lệnh ta cần
-	+ VD:   call 0x11412
-		cmp eax,1
-		je 0x11111
-	+ ta cần eax = 1 và gọi hàm phãi trả về 1, thì ta chỉ cần sử cái hàm đấy  trả về 1 
-		mov eax,1
-		ret
-		+ điều này giúp ta bypass mọi nơi mỗi khi call hàm này để check nó đều trả về 1
-- trick xử lý crack
-	+ nếu so sánh là ở bộ nhớ chúng ta nên vào hàm và xem giá trị nào thay đổi bộ nhớ đấy
-		+ vì các giá trị dưỡi sẽ trích xuất dữ liệu từ bộ nhớ ra so sánh nên ta phãi vào hàm coi kĩ và sửa giá trị sao cho hợp lý
-	+ nêu so sánh nhảy là thanh ghi với thanh ghi và số thì chúng ta sẽ kiếm hàm thay đổi trả về giá trị hoặc sửa jmp luôn cũng dc, đôi khi chúng ta vẫn nên kiểm tra vì kiểu j đoạn sau có thể check lại thanh ghi
-- đôi khi programer sẽ lừa vì ta luôn theo dõi eax và cách để tránh bị lừa
-	+ 204 expire trial method
-	- thông thường crc check nó sẽ set giá trị ax ve 0x1
-	+ nêu ax = 0x1 mà không nhảy đúng hướng thì chắc chắn là lệnh lừa 
-
-- Cyclic Redundancy Check thường viết tắt là CRC, là thuật ngữ tiếng Anh trong kỹ thuật số, là phương pháp kiểm tra và phát hiện lỗi, được sử dụng trong các mạng số và thiết bị lưu trữ để phát hiện sự thay đổi tình cờ đối với dữ liệu được truyền đi hay lưu trữ.
-	+ khi ta sửa dữ liệu và khiến trigger crc, nó sẽ dẫn ta tới bad message,  thông thường thì đây đc gọi là anti tamper protect
-	+ bypass nó thì cứ jmp nó là dc :V tránh báo lỗi của nó thôi
 
 
 
@@ -533,34 +560,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
-
-mô phỏng crack
-	- dung http analysis xem có action online không 
-	- dùng api monitor xem có đọc file key không
-		+ dựa vào việc này ta có thể method search string và tìm tới gần hơn nơi ta crack
-		+ vd: tạo key file rồi khiến file đó confirmed là bypass
-	- nếu các bước trên không có ta sẽ dùng các method khác để crack
-	- nếu có ta theo dõi nhánh, comment, follow eax, global variable, hàm window api để crack thành công
-
-
-
-
-
-
-mô phỏng
-- để crack clear (crack toàn bộ mà k phãi từng phần) chúng ta phãi tìm cái register khiến chúng ta có bad message và sau đó tìm các lệnh khiến cho register đó thay đổi
-	023 cracking mr bills  - (important)
-- thông thường programer sẽ
-	check format -> check value
-
-
-- mổ ta deep crack
-	+ họ sẽ tạo 1 hoặc nhiều func check và dùng lại nhiều lần
-	+ nếu chúng ta crack surface thì chúng ta chỉ thay đổi giá trị check và dẫn dắt tới good message nhưng nêu chúng ta muốn deep crack chúng ta phãi đi qua phần check của nó và xem, khi chúng ta sửa thành công thì chúng ta sẽ crack toàn bộ mà không cần sửa các chức năng khác
-
-
-try it
-https://reverseengineering.stackexchange.com/questions/2796/find-a-string-that-i-entered-in-ollydbg
 
 
 
@@ -580,9 +579,7 @@ createfileW
 
 
 
-- ReadFile window API
-	+ dữ liệu của file sẽ được lưu ở địa tri với biến lpNumberOfBytesRead
-	+ nNumberOfBytesToRead : The maximum number of bytes to be read.
+
 
 
 

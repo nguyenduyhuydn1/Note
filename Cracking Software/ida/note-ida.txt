@@ -45,5 +45,3 @@ startTrial
 
 
 installUpdate	SdAppServices_49
-
-C:\Program Files (x86)\Stardock\Fences\SdAppServices.dll	0000000073270000	000000000011A000
