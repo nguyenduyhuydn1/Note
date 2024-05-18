@@ -21,27 +21,7 @@ key
 	+ 
 
 
-0x803b58
-
-trial
-	SdAppServices_16	setCacheValue	
-			
-	SdAppServices_32	SetStoredTrialEmail
-
-	SdAppServices_19	startTrial				khu khong network no bao loi
-				
-	
-setCacheValue
-setStoredTrialemail
-startTrial
-
-screen 2
-SdAppServices_34	GetTrialRequestToken		
-
-screen 3
-setCacheValue
-setStoredTrialemail
-startTrial
 
 
-installUpdate	SdAppServices_49
+https://sanet.st/blogs/bonnytuts/flutter_mvil_recursos_nativos_nivel_intermedio.4511457.html
+https://github.com/gswzvz/deepfreeze

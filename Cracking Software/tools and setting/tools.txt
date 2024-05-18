@@ -51,7 +51,9 @@ password uncompress zip file = crackinglessons.com
 - ida
 	+ https://www.youtube.com/watch?v=pfBA6y4VLwM
 	+ findcrypt2 - 3
-	+ 
+	
+- mimikatz
+	+ https://github.com/gentilkiwi/mimikatz
 
 
 - .NET Deobfuscator

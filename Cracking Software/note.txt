@@ -1,3 +1,8 @@
+Burp Suite
+deep freeze
+https://www.softwaretestinghelp.com/remote-access-software/
+
+
 
 https://ikrima.dev/dev-notes/assembly/asm-cheatsheet/
 https://trungkmare.wordpress.com/2018/05/31/bang-lenh-nhay-trong-assembly/
@@ -40,6 +45,8 @@ msdn = Microsoft Developer Network
 		+ https://www.youtube.com/watch?v=ks6csfpTRCE&list=PL7YjNn4bTOJqwhUxB6ZZguNkHDy1s2fpn
 	+ https://www.youtube.com/watch?v=vxNzPvpiICk
 		+ shortcut ida
+	+ https://www.youtube.com/watch?v=lFxL1VPOB2U
+	+ https://www.youtube.com/watch?v=qCQRKLaz2nQ
 
 - hack game huong dan
 	+ https://gamehacking.academy/pages/3/04/
@@ -176,13 +183,8 @@ crack password
 	+ win game ez
 
 
-- khi chúng ta đang tìm đường đi để check thì chúng ta phãi coi cái ram memory address (địa chỉ chạy lệnh)
-	- khi chúng ta đang check bằng cách nhấn f8 thì đôi khi nó sẽ hiện running nhưng k thể thao tác , đó là lý do ta dùng hardware breakpoint
-	- khi ta tìm ở ram memory address 6xxxxx.... mà chuyển tới address hệ thống 8xxx thì nên dừng ở hàm gọi gần nhất và press g để check các đường đi
-	- 6xxxxxx... là thư viện  chúng ta có thể check ở memory map
-	- thống thường là ta tìm ở phần code user 4xxxxx..
-	- https://www.youtube.com/watch?v=D9hQu9fAmCs&list=PLFgDJNQkgnu9NilH9vjHtJC0mW4o7jegn&index=18&pp=gAQBiAQBsAQB
-	
+
+
 - tín hiệu ta đang debug đúng nơi là có nhiều jump và register thường là các thanh ghi tính toán eax ebx,esi .....
 - thường thì đường đi ngắn nhất là sai
 - khi đã crack chúng ta phãi đổi tên file về như củ vì có khả năng sẽ sinh lỗi vì các chức năng cần check name file để sử dụng :V trick lừa mấy ông debugger
@@ -265,6 +267,7 @@ word 2 bytes
 - mov dword ptr ds:["memory address"], eax
 ds = data segment
 ss = stack segment	(no goi o phan stack)
+cs
 
 Code – The segment where actual code is stored and is represented by the .text section. It mainly contains assembly language instructions and can not be expanded once program execution begins.
 
@@ -300,6 +303,25 @@ Stack – In this memory segment, data may be initialized at run-time. It acts a
 	+ nếu chương trình dùng Signed numbers thì ta tập trung vào OF flag
 - Signed vs Unsigned Numbers
 	+ https://www.cs.uaf.edu/2008/fall/cs301/lecture/10_17_signed_unsigned.html
+
+
+
+
+RAX	Accumulator; Used for input/output, arithmetic,and return values from functions
+RBX	Base; Used for indexed addressing (using one register as base and other as index)
+RCX	Count; Stores loop count variables in iterative operations
+RDX	Data; Input/output, sometimes extends RAX for multiply/divide
+RSP	Stack Pointer; Stores current position within the stack
+RBP	Base Pointer; Helps in referencing parameter and other stack variables as offsets from the "base" of the stack
+RSI	Used as a source index for string operations
+RDI	Used as a destination index for string operations
+RIP	Stores next instruction to be executed
+
+R8-R15	x64 general purpose registers
+
+
+
+
 
 
 
@@ -413,6 +435,10 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 
 
 
+- last chance exception on .... (C0000005,EXCEPTION_ACCESS_VIOLATION)
+	+ không thể phục hồi sau khi dính lỗi này.
+	+ chương trình bị crash và không biết những gì để làm, đại khái là bạn đã sửa sai giá trị khiến nó bị lỗi.
+		+ điều này chứng tỏ rằng bạn đang patch sai nơi và phãi đi xâu hơn để tìm nơi cần patch
 
 
 - api monitor
@@ -420,35 +446,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 		+ CreateFileA, CreateFileW
 	- System Services --> Windows System Infomation --> Registry --> advapi32.dll
 		+ RegOpenKeyExA, RegOpenKeyExW
-
-
-- last chance exception on .... (C0000005,EXCEPTION_ACCESS_VIOLATION)
-	+ không thể phục hồi sau khi dính lỗi này.
-	+ chương trình bị crash và không biết những gì để làm, đại khái là bạn đã sửa sai giá trị khiến nó bị lỗi.
-		+ điều này chứng tỏ rằng bạn đang patch sai nơi và phãi đi xâu hơn để tìm nơi cần patch
-
-
-
-- .Net
-	+ CSL
-
-	+ CSP
-		- 091 removing activation button - hieu cach xoa form trong .net
-		- 108 dnspy call stack and http analyzer method - .net
-		- 110 crack license check - .net
-		- 112 crack login password - .net
-		- 115 unpacking themida protection - crack themida , trick use detect it easy (.Net) cần phần mềm để fix dump coi để biết
-		- 124 setting software to Genuine and Activating program features - .Net
-		- 126 bypass server response method - .Net
-
-
-
-
-
-
-
-
-
 
 
 
@@ -472,13 +469,11 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 - tìm good message or bad message sau đó tìm hàm window gần nhất và đặt BP
 - xor eax,eax
 	lệnh này dùng để clear thanh ghi vì ta set eax về 0
-	https://www.tutorialspoint.com/assembly_programming/assembly_logical_instructions.htm
 - đầu tiền chúng ta tìm bad message 
 	- sau đó ta theo dõi lệnh jump kiểm tra vì sao nó nhảy tới bad message
 	- sau đó chúng ta nhìn vào eax xem nó bằng fffffff hay 00000000 ( con dua vao gia tri so sanh)
 		- nếu là 00000000 thì kết quả đang đúng
 		- nếu là ffffffff thì kết quả đang sai và chúng ta cần theo dõi eax phía trên để tìm tại sao nó lại ffffffff từ đó ta có thể sửa đổi giá trị hoặc tìm ra password để nhảy tới good message
-			- khi ta tìm ra 1 register so sanh khiến nó thành ffffffff mà không có sự so sánh chuỗi hay đọc file .... thì ta chỉ cần sửa lệnh tới good message vì nó sẽ không ảnh hưởng đến chức năng
 			- khi ta tìm ra 1 func hay 1 sự so sánh thì ta có thể vào mà check và có thể extract password
 			- nếu đó là func của window api ta cần check document để xem nó trả về cái gì và xử lý tiếp
 			- 172 using exceptions to locate patch tham khao, phan tich deep debug
@@ -570,44 +565,6 @@ virtualalloc is api for allocating memory for writing. virtualprotect is api for
 		+ 208-212 (nitro pdf)
 			+ resource hacker xoa title, call stack ket hop voi onion method, them tien to "~" vao file de ngan chay file, remove nag 
 		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Burp Suite
-deep freeze
-https://www.softwaretestinghelp.com/remote-access-software/
-
-
-regOpenkeyExa
-regOpenkeyExW
-
-createfileA
-createfileW
-
-
-120-
-
-
-
 
 
 
