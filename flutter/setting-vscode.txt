@@ -1,6 +1,7 @@
 ---------------------------------------- change color active indent editor ----------------------------------------
 "workbench.colorCustomizations": {
     "editorIndentGuide.activeBackground1": "#ff0000",
+    "editor.findMatchHighlightBackground": "#ff0000d0", #search match
 }
 
 
