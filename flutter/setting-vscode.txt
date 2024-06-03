@@ -2,6 +2,9 @@
 "workbench.colorCustomizations": {
     "editorIndentGuide.activeBackground1": "#ff0000",
     "editor.findMatchHighlightBackground": "#ff0000d0", #search match
+        "editor.selectionHighlightBackground": "#ff0000d0",  // Màu nền cho các từ giống nhau khi click vào từ
+        "editor.wordHighlightBackground": "#ff0000d0",  // Màu nền cho từ đang được đọc
+        "editor.wordHighlightStrongBackground": "#ff0000d0" 
 }
 
 
