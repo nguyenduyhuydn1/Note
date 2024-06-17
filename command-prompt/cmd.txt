@@ -1,0 +1,15 @@
+################################################ taskkill
+set "PROCESS_NAME=popup.exe"
+
+:LOOP
+tasklist /FI "IMAGENAME eq %PROCESS_NAME%" 2>NUL | find /I "%PROCESS_NAME%">NUL
+if "%ERRORLEVEL%"=="0" (
+    echo %PROCESS_NAME% is running. Killing the process...
+    taskkill /F /IM %PROCESS_NAME%
+)
+timeout /t 5 /nobreak >NUL 2>NUL
+goto LOOP
+
+
+
+
